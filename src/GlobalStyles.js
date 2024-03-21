@@ -1,20 +1,28 @@
-import { createGlobalStyle } from 'styled-components';
-import 'modern-normalize';
+import { createGlobalStyle } from "styled-components";
+import "modern-normalize";
 
 export const GlobalStyles = createGlobalStyle`
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  color: ${(p) => p.theme.color.black}
 }
 
-code {
+/* body {
+ margin: 0;
+ display: flex;
+ place-items: center;
+ min-width: 100vw;
+ min-height: 100vh;
+} */
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 h1,
 h2,
@@ -39,11 +47,13 @@ a {
 
 button {
   cursor: pointer;
+  padding: 0;
+  border: none;
 }
 
 img {
   display: block;
-  max-width: 100%;
+  /* max-width: 100%; */
   object-fit: cover;
 }
 `;
