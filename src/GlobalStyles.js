@@ -9,6 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   color: ${(p) => p.theme.color.black}
+
+
+}
+
+body.disable-scroll{
+  overflow: hidden;
 }
 
 /* body {

@@ -4,6 +4,7 @@ export const theme = {
     blackSecond: "rgba(16, 24, 40, 0.2)",
     blackThird: "rgba(16, 24, 40, 0.1)",
     grey: "#475467",
+    greyPlaceholder: "rgba(16, 24, 40, 0.6)",
     red: "#E44848",
     redSecond: "#d84343",
     white: "#F2F4F7",

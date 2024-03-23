@@ -2,13 +2,13 @@ import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import { GlobalStyles } from "../GlobalStyles";
 import { Navigation } from "./Navigation";
+import { ToastContainer } from "react-toastify";
 
 export const Layout = () => {
   return (
     <>
       <main
         style={{
-          //  backgroundColor: "#E44848",
           width: "100%",
           height: "100%",
         }}
@@ -20,6 +20,7 @@ export const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
+      <ToastContainer />
       <GlobalStyles />
     </>
   );

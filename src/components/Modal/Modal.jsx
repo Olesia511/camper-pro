@@ -1,25 +1,32 @@
 import sprite from "assets/sprite.svg";
 import { useEffect } from "react";
 import { ModalContent, Modal, ModalChildren, ModalCloseBtn, ModalClosetSvg } from "./Modal.styled";
+import { changeDate } from "../../redux/dateBook/slice";
+import { useDispatch } from "react-redux";
 
 export const ModalWindow = ({ isOpen, onClose, children }) => {
+  const dispatch = useDispatch();
   const onBackDropClick = (evt) => {
-    if (evt.currentTarget === evt.target) onClose();
+    if (evt.currentTarget === evt.target) {
+      dispatch(changeDate(new Date().toISOString()));
+      onClose();
+    }
   };
-
+  const body = document.querySelector("body");
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.keyCode === 27) {
+        dispatch(changeDate(new Date().toISOString()));
         onClose();
       }
     };
     if (isOpen) {
       document.addEventListener("keydown", handleKeyPress);
-      document.body.classList.add("disable-scroll");
+      body.classList.add("disable-scroll");
     }
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
-      document.body.classList.remove("disable-scroll");
+      body.classList.remove("disable-scroll");
     };
   }, [isOpen, onClose]);
   if (!isOpen) {
@@ -29,7 +36,7 @@ export const ModalWindow = ({ isOpen, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <Modal onClick={onBackDropClick}>
+        <Modal id="modal-win" onClick={onBackDropClick}>
           <ModalContent>
             <ModalCloseBtn onClick={onClose}>
               <ModalClosetSvg>

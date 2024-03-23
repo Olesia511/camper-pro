@@ -1,6 +1,9 @@
+import React from "react";
 import sprite from "assets/sprite.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectVehicleCard } from "../../redux/campers/selectors";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   CardImage,
@@ -28,21 +31,124 @@ import {
   VehicleReviewsDataWrapper,
   VehicleReviewsComment,
   VehicleReviewsWrapper,
-  // VehicleReviewsRatingWrapper,
+  FormTitle,
+  FormText,
+  FormInput,
+  FormTextArea,
+  FormBtn,
 } from "../CampersCard/CampersCard.styled";
 
 import { useState } from "react";
 import { firstLetterUppercase, splitWordsFunc, splitDataFunc } from "../../helpers/formatedText";
-import { Rating } from "@material-tailwind/react";
+
+import { Card } from "@material-tailwind/react";
+import { ratingFunc } from "../../helpers/ratingStarFunction";
+import StyledDatepicker from "../DatePicker/StyledDatePicker";
+import { orderVehicle } from "../../redux/bookVehicle/slice";
+import { selectorDateBook } from "../../redux/dateBook/selectors";
+
+import { changeDate } from "../../redux/dateBook/slice";
+import { format } from "date-fns";
+
+const toastIsRequired = (nameField) => {
+  toast(`${nameField} is required.`);
+};
+const toastIsValidEmail = () => {
+  toast(`Email is not valid. Example: testmail@gmail.com`);
+};
+
+const toastBookVehicle = (data) => {
+  const {
+    dateBook,
+    vehicle: { name, form },
+  } = data;
+
+  toast(`You have booked ${name} form ${form} for this date ${format(new Date(dateBook), "dd/MM/yyyy")} .`);
+};
+
+export function SimpleRegistrationForm() {
+  const dateBook = useSelector(selectorDateBook);
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [textArea, setTextArea] = useState("");
+
+  const vehicleCardBook = useSelector(selectVehicleCard);
+
+  const dispatch = useDispatch();
+
+  function isEmailValid(email) {
+    const regex =
+      /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,6}|[0-9]{1,3})(\]?)$/;
+    return regex.test(email);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { name, _id, form } = vehicleCardBook;
+
+    if (userName.trim() === "") {
+      toastIsRequired("Name");
+      return;
+    }
+    if (email.trim() === "") {
+      toastIsRequired("Email");
+      return;
+    } else {
+      const isValid = isEmailValid(email);
+      if (!isValid) {
+        toastIsValidEmail();
+        return;
+      }
+    }
+
+    dispatch(
+      orderVehicle({ name: userName, email, textArea, dateBook, vehicle: { name, _id, form: splitWordsFunc(form) } })
+    );
+    dispatch(changeDate(new Date().toISOString()));
+
+    toastBookVehicle({ dateBook, vehicle: { name, form: splitWordsFunc(form) } });
+
+    setUserName("");
+    setEmail("");
+    setTextArea("");
+  };
+
+  return (
+    <Card color="transparent" shadow={false}>
+      <FormTitle>Book your campervan now</FormTitle>
+      <FormText> Stay connected! We are always ready to help you. </FormText>
+
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div>
+          <FormInput placeholder="Name" type="text" onChange={(e) => setUserName(e.target.value)} value={userName} />
+
+          <FormInput placeholder="Email" type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+          <StyledDatepicker />
+          <div>
+            <FormTextArea
+              placeholder="Comment"
+              type="textarea"
+              onChange={(e) => setTextArea(e.target.value)}
+              value={textArea}
+            />
+          </div>
+        </div>
+        <FormBtn type="submit" onClick={handleSubmit}>
+          Send
+        </FormBtn>
+      </form>
+    </Card>
+  );
+}
 
 export const CampersCardFullData = () => {
   const card = useSelector(selectVehicleCard);
   const [isActiveFeaturesBtn, setiSActiveFeaturesBtn] = useState(true);
   const [isActiveReviewsBtn, setiSActiveReviewsBtn] = useState(false);
-  //   console.log(`card`, card);
+
   const { name, price, rating, location, adults, children, engine, transmission } = card;
   const { form, length, width, height, tank, consumption, description, details, gallery, reviews } = card;
-  console.log(`card`, card);
+
   const {
     CD,
     TV,
@@ -59,36 +165,6 @@ export const CampersCardFullData = () => {
     toilet,
     water,
   } = details;
-
-  const ratingFunc = (num) => {
-    function RatedIcon() {
-      return (
-        <StarSvg className="rating-star">
-          <use href={`${sprite}#icon-star`} />
-        </StarSvg>
-      );
-    }
-    function UnratedIcon() {
-      return (
-        <StarSvg className="unrating-star">
-          <use href={`${sprite}#icon-star`} />
-        </StarSvg>
-      );
-    }
-
-    function CustomRatingIcon(num) {
-      return (
-        <Rating
-          style={{ width: "96px", height: "16px" }}
-          value={num}
-          ratedIcon={<RatedIcon />}
-          unratedIcon={<UnratedIcon />}
-          readonly
-        />
-      );
-    }
-    return CustomRatingIcon(num);
-  };
 
   return (
     <CampersCardFullDataWrapper>
@@ -347,7 +423,7 @@ export const CampersCardFullData = () => {
           )}
         </VehicleEquipmentWrapper>
 
-        <VehicleBookFormWrapper></VehicleBookFormWrapper>
+        <VehicleBookFormWrapper>{SimpleRegistrationForm()}</VehicleBookFormWrapper>
       </VehicleWrapper>
     </CampersCardFullDataWrapper>
   );
