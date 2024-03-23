@@ -12,3 +12,13 @@ export const fetchCampers = createAsyncThunk("campers/fetchAll", async (_, thunk
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+export const fetchCamperById = createAsyncThunk("campers/fetchById", async (id, thunkAPI) => {
+  try {
+    const response = await axios.get(`/adverts/${id}`);
+    // console.log(`response.data`, response.data);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});

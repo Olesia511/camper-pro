@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// *****   Styled card with information about campers  ****
+
 export const CardWrapper = styled.li`
   display: flex;
   gap: 24px;
@@ -98,6 +100,81 @@ export const HeartBtn = styled.button`
   }
 `;
 
+export const ReviewsWrapper = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 24px;
+  &.fullData {
+    margin-bottom: 16px;
+  }
+`;
+
+export const Reviews = styled.div`
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  margin-right: 16px;
+`;
+
+export const Description = styled.p`
+  color: ${(p) => p.theme.color.grey};
+  text-align: start;
+  white-space: nowrap;
+  margin-bottom: 24px;
+
+  &.fullData {
+    white-space: normal;
+    margin-bottom: 44px;
+  }
+`;
+
+export const EquipmentDataWrapper = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  align-content: flex-start;
+
+  &.fullData {
+    margin-bottom: 44px;
+    height: 200px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 40px;
+    }
+
+    &::-webkit-scrollbar-track {
+      margin: 8px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 36px;
+      border: 16px solid transparent;
+      background-clip: content-box;
+      background-color: #d9d9d9;
+    }
+  }
+`;
+
+export const EquipmentWrapper = styled.li`
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  height: 44px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  white-space: nowrap;
+  background: ${(p) => p.theme.color.white};
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+`;
+
+// ********   Styled SVG    ********
+
 export const HeartSvg = styled.svg`
   width: 24px;
   height: 24px;
@@ -115,24 +192,19 @@ export const HeartSvg = styled.svg`
   }
 `;
 
-export const ReviewsWrapper = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin-bottom: 24px;
-`;
-
-export const Reviews = styled.div`
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  margin-right: 16px;
-`;
-
 export const StarSvg = styled.svg`
   width: 16px;
   height: 16px;
   margin-right: 4px;
   fill: ${(p) => p.theme.color.yellow};
+
+  &.unrating-star {
+    margin-right: 0;
+    fill: ${(p) => p.theme.color.white};
+  }
+  &.rating-star {
+    margin-right: 0;
+  }
 `;
 
 export const LocationSvg = styled.svg`
@@ -141,31 +213,6 @@ export const LocationSvg = styled.svg`
   stroke: ${(p) => p.theme.color.black};
   fill: none;
   margin-right: 4px;
-`;
-
-export const Description = styled.p`
-  color: ${(p) => p.theme.color.grey};
-  text-align: start;
-  white-space: nowrap;
-  margin-bottom: 24px;
-`;
-
-export const EquipmentDataWrapper = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
-`;
-
-export const EquipmentWrapper = styled.li`
-  display: flex;
-  flex-wrap: nowrap;
-  text-align: center;
-  height: 44px;
-  padding: 12px 18px;
-  border-radius: 100px;
-  white-space: nowrap;
-  background: ${(p) => p.theme.color.white};
 `;
 
 export const EquipmentSvgFill = styled.svg`
@@ -182,4 +229,153 @@ export const EquipmentSvgStroke = styled.svg`
   margin-right: 8px;
   stroke: ${(p) => p.theme.color.black};
   fill: none;
+`;
+
+// *****   Styled card with full information about campers  *****
+
+export const CampersCardFullDataWrapper = styled.div`
+  width: 902px;
+  height: 640px;
+`;
+
+export const ImagesFullDataWrapper = styled.div`
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+`;
+
+export const DetailsBtnWrapper = styled.div`
+  width: 902px;
+  height: 48px;
+  border-bottom: 1px solid ${(p) => p.theme.color.blackSecond};
+  margin-bottom: 44px;
+`;
+
+export const DetailsBtn = styled.button`
+  margin-bottom: 24px;
+  height: 24px;
+  background: transparent;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-top: 24px;
+    height: 5px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 300ms ease-in-out;
+  }
+
+  &.active-features:after,
+  &.active-reviews:after,
+  &:hover:after {
+    border-color: ${(p) => p.theme.color.red};
+  }
+`;
+
+export const VehicleWrapper = styled.div`
+  display: flex;
+`;
+
+export const VehicleEquipmentWrapper = styled.div`
+  width: 430px;
+  height: 532px;
+  margin-right: 24px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 40px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 8px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 36px;
+    border: 16px solid transparent;
+    background-clip: content-box;
+    background-color: #d9d9d9;
+  }
+`;
+
+export const VehicleTitleWrapper = styled.div`
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  border-bottom: 1px solid ${(p) => p.theme.color.blackThird};
+  height: 48px;
+  margin-bottom: 24px;
+`;
+
+export const VehicleDetails = styled.li`
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  color: ${(p) => p.theme.color.black};
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+`;
+
+export const VehicleReviewsWrapper = styled.li`
+  /* display: flex;
+  flex-direction: column; */
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+`;
+export const VehicleReviewsDataWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+`;
+
+export const VehicleReviewsComment = styled.p`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: ${(p) => p.theme.color.grey};
+`;
+export const VehicleReviewsCircle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: ${(p) => p.theme.color.white};
+  color: ${(p) => p.theme.color.red};
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  margin-right: 16px;
+`;
+export const VehicleReviewsName = styled.p`
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+`;
+export const VehicleReviewsRating = styled.div`
+  width: 96px;
+  height: 16px;
+`;
+
+export const VehicleBookFormWrapper = styled.div`
+  border: 1px solid ${(p) => p.theme.color.blackSecond};
+  border-radius: 10px;
+  padding: 24px;
+  width: 448px;
+  height: 532px;
 `;

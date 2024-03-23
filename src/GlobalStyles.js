@@ -49,6 +49,8 @@ button {
   cursor: pointer;
   padding: 0;
   border: none;
+  
+  background-color: transparent;
 }
 
 img {
@@ -56,4 +58,5 @@ img {
   /* max-width: 100%; */
   object-fit: cover;
 }
+
 `;
