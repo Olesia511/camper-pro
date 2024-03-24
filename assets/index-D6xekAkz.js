@@ -1,6 +1,6 @@
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/HomePage-Bk-RFptY.js","assets/StyledDatePicker-BHBxtisY.js","assets/StyledDatePicker-BNL2uPDj.css","assets/CampersFilter.styled-Clqt-trM.js","assets/CatalogPage-CNuymgtZ.js","assets/CampersList-DOt7ITg_.js","assets/FavoritePage-BiiS-G-u.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/HomePage-BMAlsdDC.js","assets/StyledDatePicker-IHSaT0iB.js","assets/StyledDatePicker-BNL2uPDj.css","assets/CampersFilter.styled-BdzZrtLM.js","assets/CatalogPage-_VIlA2l_.js","assets/CampersList-ClvzfWVr.js","assets/FavoritePage-HnmPzvkw.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
@@ -174,7 +174,7 @@ img {
   &:hover:after {
     border-color: ${e=>e.theme.color.red};
   }
-`,yS=()=>M.jsx(pS,{children:M.jsx(hS,{children:M.jsxs(mS,{children:[M.jsx(As,{exact:"true",to:"/",children:"Home"}),M.jsx(As,{to:"/catalog",children:"Catalog"}),M.jsx(As,{to:"/favorites",children:"Favorites"})]})})}),vS=()=>M.jsxs(M.Fragment,{children:[M.jsx(yS,{}),M.jsx("main",{style:{width:"100%",height:"100%",background:"yellowgreen",marginLeft:"auto",marginRight:"auto",marginTop:"100px",padding:"100px 64px"},children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"LOADING......."}),children:M.jsx(c1,{})})}),M.jsx(dS,{}),M.jsx(eS,{})]}),gS=P.lazy(()=>cc(()=>import("./HomePage-Bk-RFptY.js"),__vite__mapDeps([0,1,2,3]))),wS=P.lazy(()=>cc(()=>import("./CatalogPage-CNuymgtZ.js"),__vite__mapDeps([4,1,2,5,3]))),SS=P.lazy(()=>cc(()=>import("./FavoritePage-BiiS-G-u.js"),__vite__mapDeps([6,5,1,2]))),ES=()=>M.jsx(M.Fragment,{children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"Loading..."}),children:M.jsxs(d1,{children:[M.jsxs(bn,{path:"/",element:M.jsx(vS,{}),children:[M.jsx(bn,{index:!0,element:M.jsx(gS,{})}),M.jsx(bn,{path:"/catalog",element:M.jsx(wS,{})}),M.jsx(bn,{path:"/favorites",element:M.jsx(SS,{})})]}),M.jsx(bn,{path:"*",element:M.jsx(a1,{to:"/"})})]})})});var ty={exports:{}},ny={};/**
+`,yS=()=>M.jsx(pS,{children:M.jsx(hS,{children:M.jsxs(mS,{children:[M.jsx(As,{exact:"true",to:"/",children:"Home"}),M.jsx(As,{to:"/catalog",children:"Catalog"}),M.jsx(As,{to:"/favorites",children:"Favorites"})]})})}),vS=()=>M.jsxs(M.Fragment,{children:[M.jsx(yS,{}),M.jsx("main",{style:{width:"100%",height:"100%",marginLeft:"auto",marginRight:"auto",marginTop:"100px",padding:"100px 64px"},children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"LOADING......."}),children:M.jsx(c1,{})})}),M.jsx(dS,{}),M.jsx(eS,{})]}),gS=P.lazy(()=>cc(()=>import("./HomePage-BMAlsdDC.js"),__vite__mapDeps([0,1,2,3]))),wS=P.lazy(()=>cc(()=>import("./CatalogPage-_VIlA2l_.js"),__vite__mapDeps([4,1,2,5,3]))),SS=P.lazy(()=>cc(()=>import("./FavoritePage-HnmPzvkw.js"),__vite__mapDeps([6,5,1,2]))),ES=()=>M.jsx(M.Fragment,{children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"Loading..."}),children:M.jsxs(d1,{children:[M.jsxs(bn,{path:"/",element:M.jsx(vS,{}),children:[M.jsx(bn,{index:!0,element:M.jsx(gS,{})}),M.jsx(bn,{path:"/catalog",element:M.jsx(wS,{})}),M.jsx(bn,{path:"/favorites",element:M.jsx(SS,{})})]}),M.jsx(bn,{path:"*",element:M.jsx(a1,{to:"/"})})]})})});var ty={exports:{}},ny={};/**
  * @license React
  * use-sync-external-store-with-selector.production.min.js
  *
