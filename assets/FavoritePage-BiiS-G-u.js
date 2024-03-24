@@ -1,0 +1,1 @@
+import{j as r}from"./index-DAilsW_I.js";import{C as t}from"./CampersList-DOt7ITg_.js";import"./StyledDatePicker-BHBxtisY.js";function a(){return r.jsx(r.Fragment,{children:r.jsx(t,{favorites:"favorites"})})}export{a as default};
