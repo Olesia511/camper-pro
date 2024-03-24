@@ -1,21 +1,26 @@
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import { GlobalStyles } from "../GlobalStyles";
-import { Navigation } from "./Navigation";
+
 import { ToastContainer } from "react-toastify";
+import { Header } from "./Header/Header";
 
 export const Layout = () => {
   return (
     <>
+      <Header />
       <main
         style={{
           width: "100%",
           height: "100%",
+          background: "yellowgreen",
+          marginLeft: "auto",
+          marginRight: "auto",
+          // backgroundColor: "red",
+          marginTop: "100px",
+          padding: "100px 64px",
         }}
       >
-        <div>
-          <Navigation />
-        </div>
         <Suspense fallback={<div>LOADING.......</div>}>
           <Outlet />
         </Suspense>

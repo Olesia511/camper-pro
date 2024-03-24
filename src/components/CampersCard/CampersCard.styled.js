@@ -11,6 +11,10 @@ export const CardWrapper = styled.li`
   padding: 24px;
   width: 888px;
   height: 358px;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const CardImageWrapper = styled.div`
@@ -32,7 +36,7 @@ export const CardImage = styled.img`
   &:hover {
     transform: scale(1.1);
   }
-  &.containCard {
+  &.contain-card {
     object-fit: contain;
   }
 `;
@@ -94,6 +98,7 @@ export const HeartBtn = styled.button`
   background-color: transparent;
   margin-left: 10px;
   transform: scaleX(1);
+
   &:hover,
   :active {
     transform: scaleX(1.1);
@@ -185,7 +190,7 @@ export const HeartSvg = styled.svg`
   transition: transform 300ms ease-in-out, fill 300ms ease-in-out;
 
   &:hover,
-  :active {
+  &.active {
     fill: ${(p) => p.theme.color.red};
     stroke: ${(p) => p.theme.color.red};
     transform: scaleX(1.05);

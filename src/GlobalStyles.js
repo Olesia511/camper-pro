@@ -8,27 +8,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  color: ${(p) => p.theme.color.black}
-
-
+  color: ${(p) => p.theme.color.black};
 }
 
 body.disable-scroll{
   overflow: hidden;
+
 }
-
-/* body {
- margin: 0;
- display: flex;
- place-items: center;
- min-width: 100vw;
- min-height: 100vh;
-} */
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 
 h1,
 h2,
@@ -64,5 +50,13 @@ img {
   /* max-width: 100%; */
   object-fit: cover;
 }
+
+.flex-style {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
 
 `;

@@ -3,22 +3,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../redux/campers/operations";
 import { selectCampers } from "../redux/campers/selectors";
 import { CampersCard } from "./CampersCard/CampersCard";
+import { selectFavoritesCampers } from "../redux/favorites/selectors";
 
-export const CampersList = () => {
+export const CampersList = ({ favorites, catalog }) => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(fetchCampers());
-    //   console.log(`dispatch(fetchCampers())`, dispatch(fetchCampers()));
+    if (catalog) {
+      dispatch(fetchCampers());
+    }
   }, [dispatch]);
 
-  const campers = useSelector(selectCampers);
-  //   console.log(`campers`, campers);
+  const favoritesCampers = useSelector(selectFavoritesCampers);
+  const catalogCampers = useSelector(selectCampers);
+
+  const activeCampers = (id) => favoritesCampers.find((el) => el._id === id);
+
+  const campersToRender = favorites ? favoritesCampers : catalog ? catalogCampers : [];
 
   return (
     <ul style={{ maxWidth: 680 }}>
-      {campers.map((camp) => (
-        <CampersCard key={camp.name} camp={camp} />
-      ))}
+      {campersToRender.length > 0 &&
+        campersToRender.map((camp) => <CampersCard isFavorites={activeCampers(camp._id)} key={camp._id} camp={camp} />)}
     </ul>
   );
 };

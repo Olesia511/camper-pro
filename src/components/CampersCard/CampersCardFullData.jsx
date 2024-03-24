@@ -148,6 +148,7 @@ export const CampersCardFullData = () => {
 
   const { name, price, rating, location, adults, children, engine, transmission } = card;
   const { form, length, width, height, tank, consumption, description, details, gallery, reviews } = card;
+  console.log(`card`, card);
 
   const {
     CD,

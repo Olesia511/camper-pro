@@ -4,16 +4,18 @@ import storage from "redux-persist/lib/storage";
 import { campersReducer } from "./campers/slice";
 import { dateReducer } from "./dateBook/slice";
 import { bookVehicleReducer } from "./bookVehicle/slice";
+import { favoritesReducer } from "./favorites/slice";
 
 const favoritesPersistConfig = {
-  key: "campers",
+  key: "favorites",
   storage,
   //  whitelist: ["token"],
 };
 
 export const store = configureStore({
   reducer: {
-    campers: persistReducer(favoritesPersistConfig, campersReducer),
+    favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
+    campers: campersReducer,
     date: dateReducer,
     book: bookVehicleReducer,
   },

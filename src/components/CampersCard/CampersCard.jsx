@@ -21,18 +21,23 @@ import {
 } from "./CampersCard.styled";
 import sprite from "assets/sprite.svg";
 import { ModalWindow } from "../Modal/Modal";
-// import { VehicleDataCard } from "../VehicleDataCard/VehicleDataCard";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchCamperById } from "../../redux/campers/operations";
 import { firstLetterUppercase, sentenceSlice } from "../../helpers/formatedText";
 import { CampersCardFullData } from "./CampersCardFullData";
+import { addFavorites } from "../../redux/favorites/operations";
 
-export const CampersCard = ({ camp }) => {
-  const [ishovered, setIsHovered] = useState(false);
+import { selectFavoritesCampers } from "../../redux/favorites/selectors";
+import { removeFavorites } from "../../redux/favorites/slice";
+
+export const CampersCard = ({ camp, isFavorites }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const dispatch = useDispatch();
   const { _id, name, price, rating, location, adults, children } = camp;
   const { engine, transmission, description, details, gallery, reviews } = camp;
+  const favorites = useSelector(selectFavoritesCampers).find((el) => el._id === _id);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -40,12 +45,14 @@ export const CampersCard = ({ camp }) => {
     }
   }, [isModalOpen]);
 
+  const handleFavorites = () => (favorites ? dispatch(removeFavorites(_id)) : dispatch(addFavorites(_id)));
+
   return (
     <>
       <CardWrapper key={_id}>
         <CardImageWrapper>
           <CardImage
-            className={ishovered ? "containCard" : ""}
+            className={isHovered ? "contain-card" : ""}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             src={gallery[0]}
@@ -58,8 +65,8 @@ export const CampersCard = ({ camp }) => {
             <h2> {sentenceSlice(name)} </h2>
             <CamperPrice>
               <h2> &euro;{price.toFixed(2)}</h2>
-              <HeartBtn>
-                <HeartSvg>
+              <HeartBtn id={_id} onClick={handleFavorites}>
+                <HeartSvg className={favorites ? "active" : ""}>
                   <use href={`${sprite}#icon-heart`} />
                 </HeartSvg>
               </HeartBtn>

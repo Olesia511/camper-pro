@@ -1,8 +1,11 @@
+import { CampersFilter } from "../components/CampersFilter/CampersFilter";
+import { CampersList } from "../components/CampersList";
+
 export default function CatalogPage() {
- return (
-  <>
-   <h1>CATALOG PAGE </h1>
-   <h2>WELCOME</h2>
-  </>
- );
+  return (
+    <div className="flex-style">
+      <CampersFilter />
+      <CampersList catalog={"catalog"} />
+    </div>
+  );
 }
