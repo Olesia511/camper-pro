@@ -1,1 +1,0 @@
-import{j as r}from"./index-D6xekAkz.js";import{C as t}from"./CampersList-ClvzfWVr.js";import"./StyledDatePicker-IHSaT0iB.js";function a(){return r.jsx(r.Fragment,{children:r.jsx(t,{favorites:"favorites"})})}export{a as default};
