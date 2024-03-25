@@ -1,4 +1,5 @@
 # Campers Rental Website
+![readme](https://github.com/Olesia511/camper-pro/assets/131859369/262c741d-8bf0-4c28-a61d-1107c9ac374f)
 
 This is a website for renting campers. Users can filter campers by location, vehicle equipment, and vehicle type. They can also select a booking date and add or remove campers from their favorites list. The website consists of the following pages:
 
