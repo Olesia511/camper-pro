@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import sprite from "assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { selectVehicleCard } from "../../redux/campers/selectors";
@@ -49,6 +49,7 @@ import { selectorDateBook } from "../../redux/dateBook/selectors";
 
 import { changeDate } from "../../redux/dateBook/slice";
 import { format } from "date-fns";
+import { fetchCamperById } from "../../redux/campers/operations";
 
 const toastIsRequired = (nameField) => {
   toast(`${nameField} is required.`);
@@ -141,7 +142,13 @@ export function SimpleRegistrationForm() {
   );
 }
 
-export const CampersCardFullData = () => {
+export const CampersCardFullData = (id) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCamperById(id));
+  }, []);
+
   const card = useSelector(selectVehicleCard);
   const [isActiveFeaturesBtn, setiSActiveFeaturesBtn] = useState(true);
   const [isActiveReviewsBtn, setiSActiveReviewsBtn] = useState(false);

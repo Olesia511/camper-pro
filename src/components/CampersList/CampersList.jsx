@@ -7,7 +7,7 @@ import { selectFavoritesCampers } from "../../redux/favorites/selectors";
 import { selectFilters } from "../../redux/filters/selectors";
 import { selectorPage, selectorPageCount } from "../../redux/pagination/selectors";
 import { setPagination } from "../../redux/pagination/slice";
-import { Btn } from "./CampersList.styled";
+// import { Btn } from "./CampersList.styled";
 
 export const CampersList = ({ favorites, catalog }) => {
   const dispatch = useDispatch();

@@ -29,14 +29,29 @@ import { addFavorites } from "../../redux/favorites/operations";
 
 import { selectFavoritesCampers } from "../../redux/favorites/selectors";
 import { removeFavorites } from "../../redux/favorites/slice";
+import { selectCampers } from "../../redux/campers/selectors";
 
 export const CampersCard = ({ camp }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const { _id, name, price, rating, location, adults, children } = camp;
-  const { engine, transmission, description, details, gallery, reviews } = camp;
+  const campStor = useSelector(selectCampers);
+  const {
+    _id,
+    name,
+    price,
+    rating,
+    location,
+    adults,
+    children,
+    engine,
+    transmission,
+    description,
+    details,
+    gallery,
+    reviews,
+  } = camp || campStor;
 
   const favorites = useSelector(selectFavoritesCampers).find((el) => el._id === _id);
 
@@ -147,14 +162,20 @@ export const CampersCard = ({ camp }) => {
             )}
           </EquipmentDataWrapper>
 
-          <CamperBtn type="button" onClick={() => setIsModalOpen(true)}>
+          <CamperBtn
+            type="button"
+            onClick={() => {
+              setIsModalOpen(true);
+              dispatch(fetchCamperById(_id));
+            }}
+          >
             Show more
           </CamperBtn>
         </CamperDataWrapper>
       </CardWrapper>
       {isModalOpen && (
         <ModalWindow isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <CampersCardFullData onClose={() => setIsModalOpen(false)} />
+          <CampersCardFullData id={_id} onClose={() => setIsModalOpen(false)} />
         </ModalWindow>
       )}
     </>
