@@ -5,11 +5,11 @@
 Вони також можуть вибрати дату бронювання та додати або видалити кемпери зі свого списку улюблених. Веб-сайт складається з наступних сторінок:
 
 ### Home:     
-       / - Explore Your Adventure: Book Your Trekker Van Rental Today!
+       / - Дослідіть свою пригоду: замовте оренду трекера вже сьогодні!
 ### Catalog:  
-       /catalog - Discover Your Perfect Camper: Browse Available Rentals
+       /catalog - Відкрийте для себе ідеальний кемпер: перегляньте доступні опції оренди
 ### Favorites: 
-       /favorites - Your Favorites: View and Manage Your Preferred Campers
+       /favorites - Ваше вибране: переглядайте та керуйте улюбленими Campers
 
 ## Використані технології
 
@@ -34,7 +34,7 @@
 - `deploy`: Збирає проект та розгортає його на GitHub Pages.
 
 ## Backend:
-The project uses a mock backend provided by MockAPI for simulating data storage and retrieval.
+У проекті використовується макет серверної частини, наданий MockAPI для моделювання зберігання та пошуку даних.
 
 ## URL веб-сайту
 
