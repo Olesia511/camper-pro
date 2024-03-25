@@ -66,8 +66,6 @@ const StyledDatepicker = forwardRef((props, ref) => {
 
         if (!isNaN(newDate.getTime())) {
           if (newDate <= currentDate) {
-            // console.log(`selectedDate    newDate`, newDate);
-            // console.log(`selectedDate <= currentDate`, currentDate);
             setInputValue(format(currentDate, "dd/MM/yyyy"));
             const parsedDate = parse(selectDate, "dd/MM/yyyy", new Date());
             handleDateChange(parsedDate);
@@ -126,7 +124,6 @@ const StyledDatepicker = forwardRef((props, ref) => {
     return (
       <TitleWrapper>
         <StyledInputDate
-          // className="input-custom"
           type="text"
           value={inputValue}
           onChange={handleChange}
@@ -154,7 +151,7 @@ const StyledDatepicker = forwardRef((props, ref) => {
         showIcon
         toggleCalendarOnIconClick
         icon={
-          <StyledSvgCalendar /*onClick={onClick}*/>
+          <StyledSvgCalendar>
             <use href={`${sprite}#icon-calendar`} />
           </StyledSvgCalendar>
         }

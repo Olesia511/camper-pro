@@ -32,7 +32,5 @@ export const splitWordsFunc = (text) => {
 };
 
 export const splitDataFunc = (data) => {
-  // return data.split(/(?<number>\d+(?:\.\d+)?)(?<unit>[a-z]{5})?/g).join(" ");
-
   return data.split(/(?<number>\d+(?:\.\d+)?)(?:\/(?<unit>[a-z]{5}))?|(?<separator>\/)/g).join(" ");
 };

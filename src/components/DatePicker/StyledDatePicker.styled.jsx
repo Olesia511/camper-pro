@@ -1,10 +1,7 @@
 import { createGlobalStyle, styled } from "styled-components";
 
 export const CalendarGlobalStyles = createGlobalStyle`
-  /* .react-datepicker__wrapper {
-    width: 150px;
-    height: 56px;
-  } */
+
 
   .react-datepicker__input-container{
     margin-bottom: 14px;

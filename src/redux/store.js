@@ -5,16 +5,21 @@ import { campersReducer } from "./campers/slice";
 import { dateReducer } from "./dateBook/slice";
 import { bookVehicleReducer } from "./bookVehicle/slice";
 import { favoritesReducer } from "./favorites/slice";
+import { filtersReducer } from "./filters/slice";
 
 const favoritesPersistConfig = {
   key: "favorites",
   storage,
-  //  whitelist: ["token"],
+};
+const filtersPersistConfig = {
+  key: "filters",
+  storage,
 };
 
 export const store = configureStore({
   reducer: {
     favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
+    filters: persistReducer(filtersPersistConfig, filtersReducer),
     campers: campersReducer,
     date: dateReducer,
     book: bookVehicleReducer,

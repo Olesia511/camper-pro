@@ -335,9 +335,6 @@ export const VehicleDetails = styled.li`
 `;
 
 export const VehicleReviewsWrapper = styled.li`
-  /* display: flex;
-  flex-direction: column; */
-
   &:not(:last-child) {
     margin-bottom: 24px;
   }

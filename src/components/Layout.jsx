@@ -13,10 +13,8 @@ export const Layout = () => {
         style={{
           width: "100%",
           height: "100%",
-          background: "yellowgreen",
           marginLeft: "auto",
           marginRight: "auto",
-          // backgroundColor: "red",
           marginTop: "100px",
           padding: "100px 64px",
         }}

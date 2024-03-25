@@ -30,7 +30,7 @@ import { addFavorites } from "../../redux/favorites/operations";
 import { selectFavoritesCampers } from "../../redux/favorites/selectors";
 import { removeFavorites } from "../../redux/favorites/slice";
 
-export const CampersCard = ({ camp, isFavorites }) => {
+export const CampersCard = ({ camp }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -65,7 +65,7 @@ export const CampersCard = ({ camp, isFavorites }) => {
             <h2> {sentenceSlice(name)} </h2>
             <CamperPrice>
               <h2> &euro;{price.toFixed(2)}</h2>
-              <HeartBtn id={_id} onClick={handleFavorites}>
+              <HeartBtn onClick={handleFavorites}>
                 <HeartSvg className={favorites ? "active" : ""}>
                   <use href={`${sprite}#icon-heart`} />
                 </HeartSvg>

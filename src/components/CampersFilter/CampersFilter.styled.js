@@ -21,7 +21,6 @@ export const FormInputWrapper = styled.div`
   border-radius: 10px;
   border: none;
   padding: 18px;
-  /* width: 360px; */
   height: 56px;
   background: ${(p) => p.theme.color.whiteSecond};
   font-weight: 400;
@@ -69,7 +68,6 @@ export const VehicleSvg = styled.svg`
 `;
 
 export const EquipmentTitle = styled.div`
-  /* width: 360px; */
   height: 48px;
   border-bottom: 1px solid ${(p) => p.theme.color.blackThird};
   font-weight: 600;
@@ -92,7 +90,6 @@ export const RadioGroupWrapper = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  /* width: 360px; */
   height: 95px;
   margin-bottom: 64px;
 `;
@@ -160,7 +157,7 @@ export const EquipmentSvg = styled.svg`
   }
 `;
 
-// ***********check
+// *********** CheckedBox ************
 
 export const CheckedBoxInputWrapper = styled.li`
   position: relative;
@@ -208,8 +205,6 @@ export const CheckedBoxWrapper = styled.div`
 export const CheckedBoxGroupWrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
-
-  /* width: 360px; */
   row-gap: 10px;
   flex-direction: row;
   margin-bottom: 32px;

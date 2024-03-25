@@ -30,8 +30,6 @@ export const NavWrapper = styled.nav`
 
 export const StyledLink = styled(NavLink)`
   cursor: pointer;
-
-  /* margin-bottom: 24px; */
   height: 24px;
   background: transparent;
   font-weight: 600;

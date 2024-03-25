@@ -13,7 +13,6 @@ const favoritesSlice = createSlice({
   reducers: {
     removeFavorites: (state, action) => {
       const idToRemove = action.payload;
-      console.log(`idToRemove`, idToRemove);
       state.items = state.items.filter((item) => item._id !== idToRemove);
     },
   },
