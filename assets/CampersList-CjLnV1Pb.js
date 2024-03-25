@@ -1,4 +1,4 @@
-var P_=Object.defineProperty;var k_=(t,n,e)=>n in t?P_(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var ye=(t,n,e)=>(k_(t,typeof n!="symbol"?n+"":n,e),e);import{g as S_,r as W,c as Sa,t as M_,_ as xl,d as Nr,R as _l,u as De,a as Mo,j as ee,e as Vr,f as ae,h as D_,i as E_,b as br,k as iu,o as R_,B as Fu,l as N_,m as I_,n as zf}from"./index-C-G_0TN_.js";const He="/camper-pro/assets/sprite-COyFGobu.svg",kb=t=>t.campers.items,Sb=t=>{var n;return(n=t.campers)==null?void 0:n.vehicleCard};var _n={},Mb={},Db={exports:{}};/*!
+var P_=Object.defineProperty;var k_=(t,n,e)=>n in t?P_(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var ye=(t,n,e)=>(k_(t,typeof n!="symbol"?n+"":n,e),e);import{g as S_,r as W,c as Sa,t as M_,_ as xl,d as Nr,R as _l,u as De,a as Mo,j as ee,e as Vr,f as ae,h as D_,i as E_,b as br,k as iu,o as R_,B as Fu,l as N_,m as I_,n as zf}from"./index-Bc7FWsfb.js";const He="/camper-pro/assets/sprite-COyFGobu.svg",kb=t=>t.campers.items,Sb=t=>{var n;return(n=t.campers)==null?void 0:n.vehicleCard};var _n={},Mb={},Db={exports:{}};/*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
@@ -669,7 +669,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-size: 16px;
   letter-spacing: -0.02em;
   text-align: center;
-  /* color: ${t=>t.theme.color.white}; */
+  color: ${t=>t.theme.color.black};
 `,aE=De.div`
   display: flex;
   align-items: center;
