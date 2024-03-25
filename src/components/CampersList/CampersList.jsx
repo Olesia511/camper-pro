@@ -36,9 +36,7 @@ export const CampersList = ({ favorites, catalog }) => {
   }, [count]);
 
   useEffect(() => {
-    if (catalog) {
-      dispatch(fetchCampers());
-    }
+    dispatch(fetchCampers());
   }, [dispatch]);
 
   return (
