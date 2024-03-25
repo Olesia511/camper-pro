@@ -1,0 +1,1 @@
+import{j as s}from"./index-CPDo64qQ.js";import{C as e}from"./CampersList-Eoy5ojsE.js";function a(){return s.jsx("div",{className:"flex-style",children:s.jsx(e,{favorites:"favorites"})})}export{a as default};
