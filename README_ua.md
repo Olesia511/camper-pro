@@ -1,7 +1,12 @@
 # Campers Rental Website
+![readme](https://github.com/Olesia511/camper-pro/assets/131859369/bee18cdb-cfd5-48c8-af23-650f48c0c26f)
 
 Це веб-сайт для прокату кемперів. Користувачі можуть фільтрувати кемпери за розташуванням, обладнанням автомобіля та типом транспортного засобу. 
 Вони також можуть вибрати дату бронювання та додати або видалити кемпери зі свого списку улюблених. Веб-сайт складається з наступних сторінок:
+
+## Home: / - Explore Your Adventure: Book Your Trekker Van Rental Today!
+## Catalog: /catalog - Discover Your Perfect Camper: Browse Available Rentals
+## Favorites: /favorites - Your Favorites: View and Manage Your Preferred Campers
 
 ## Використані технології
 
@@ -24,6 +29,9 @@
 - `preview`: Переглядає виробничу збірку локально.
 - `format`: Форматує код за допомогою Prettier.
 - `deploy`: Збирає проект та розгортає його на GitHub Pages.
+
+## Backend:
+The project uses a mock backend provided by MockAPI for simulating data storage and retrieval.
 
 ## URL веб-сайту
 
