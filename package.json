@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://olesia511.github.io/camper-pro",
+  "homepage": "https://olesia511.github.io/camper-pro/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
