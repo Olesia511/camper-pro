@@ -26,7 +26,7 @@ const favoritesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const newItem = action.payload;
-        const existingItem = state.items.find((item) => item._id === newItem._id);
+        const existingItem = state?.items?.find((item) => item?._id === newItem?._id);
         if (!existingItem) {
           state.items.push(newItem);
         }
