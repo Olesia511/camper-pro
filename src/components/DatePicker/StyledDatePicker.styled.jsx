@@ -211,7 +211,7 @@ export const StyledMonthsName = styled.span`
   font-size: 16px;
   letter-spacing: -0.02em;
   text-align: center;
-  color: ${(p) => p.theme.color.white};
+  color: ${(p) => p.theme.color.black};
 `;
 
 export const TitleWrapper = styled.div`
