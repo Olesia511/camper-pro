@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCamperById, fetchCampers } from "./operations";
+import { fetchCamperById, fetchCampers, fetchRefreshCampers } from "./operations";
 
 const campersInitialState = {
   items: [],
@@ -38,7 +38,14 @@ const campersSlice = createSlice({
 
         state.vehicleCard = action.payload;
       })
-      .addCase(fetchCamperById.rejected, handleRejected);
+      .addCase(fetchCamperById.rejected, handleRejected)
+      .addCase(fetchRefreshCampers.pending, handlePending)
+      .addCase(fetchRefreshCampers.fulfilled, (state, action) => {
+        state.items = action.payload;
+        state.isLoggedIn = true;
+        state.isRefresh = false;
+      })
+      .addCase(fetchRefreshCampers.rejected, handleRejected);
   },
 });
 

@@ -16,13 +16,17 @@ const filtersPersistConfig = {
   key: "filters",
   storage,
 };
+const campersPersistConfig = {
+  key: "campers",
+  storage,
+};
 
 export const store = configureStore({
   reducer: {
     favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
     filters: persistReducer(filtersPersistConfig, filtersReducer),
     pagination: paginationReducer,
-    campers: campersReducer,
+    campers: persistReducer(campersPersistConfig, campersReducer),
     date: dateReducer,
     book: bookVehicleReducer,
   },

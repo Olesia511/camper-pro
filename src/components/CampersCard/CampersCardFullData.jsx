@@ -149,22 +149,7 @@ export const CampersCardFullData = () => {
   const { name, price, rating, location, adults, children, engine, transmission } = card;
   const { form, length, width, height, tank, consumption, description, details, gallery, reviews } = card;
 
-  const {
-    CD,
-    TV,
-    airConditioner,
-    bathroom,
-    beds,
-    freezer,
-    gas,
-    hob,
-    kitchen,
-    microwave,
-    radio,
-    shower,
-    toilet,
-    water,
-  } = details;
+  const { CD, TV, airConditioner, beds, freezer, gas, hob, kitchen, microwave, radio, shower, toilet, water } = details;
 
   return (
     <CampersCardFullDataWrapper>

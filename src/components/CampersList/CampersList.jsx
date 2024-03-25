@@ -41,13 +41,11 @@ export const CampersList = ({ favorites, catalog }) => {
 
   return (
     <ul style={{ maxWidth: 680 }}>
-      {campersToRender.length > 0 &&
+      {campersToRender?.length > 0 &&
         campersToRender.map((camp, i) => {
           return <CampersCard key={camp._id} camp={camp} />;
-          // if (count > i) {
-          //   return <CampersCard key={camp._id} camp={camp} />;
-          // }
         })}
+
       {/* <Btn type="button" className={filtersCampers.length - count > 4 ? "disabl" : ""} onClick={handleNextPage(page)}>
         Load more{" "}
       </Btn> */}
