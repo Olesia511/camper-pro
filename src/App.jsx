@@ -4,9 +4,9 @@ import { Navigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 
-const HomePage = lazy(() => import("pages/HomePage"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("pages/CatalogPage"));
-const FavoritePage = lazy(() => import("pages/FavoritePage"));
+const FavoritePage = lazy(() => import("./pages/FavoritePage/FavoritePage"));
 
 export const App = () => {
   return (

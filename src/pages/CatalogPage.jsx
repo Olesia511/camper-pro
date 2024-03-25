@@ -1,5 +1,5 @@
 import { CampersFilter } from "../components/CampersFilter/CampersFilter";
-import { CampersList } from "../components/CampersList";
+import { CampersList } from "../components/CampersList/CampersList";
 
 export default function CatalogPage() {
   return (

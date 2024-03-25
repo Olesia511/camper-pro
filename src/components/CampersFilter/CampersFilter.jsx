@@ -34,6 +34,7 @@ export const CampersFilter = () => {
     const [location, setLocation] = useState("");
     const [isCheckedRadio, setIsCheckedRadio] = useState([true, false, false]);
     const [isCheckedBox, setIsCheckedBox] = useState([false, false, false, false, false]);
+
     const dispatch = useDispatch();
 
     const catalogCampers = useSelector(selectCampers);

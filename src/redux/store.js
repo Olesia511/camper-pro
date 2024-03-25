@@ -6,6 +6,7 @@ import { dateReducer } from "./dateBook/slice";
 import { bookVehicleReducer } from "./bookVehicle/slice";
 import { favoritesReducer } from "./favorites/slice";
 import { filtersReducer } from "./filters/slice";
+import { paginationReducer } from "./pagination/slice";
 
 const favoritesPersistConfig = {
   key: "favorites",
@@ -20,6 +21,7 @@ export const store = configureStore({
   reducer: {
     favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
     filters: persistReducer(filtersPersistConfig, filtersReducer),
+    pagination: paginationReducer,
     campers: campersReducer,
     date: dateReducer,
     book: bookVehicleReducer,

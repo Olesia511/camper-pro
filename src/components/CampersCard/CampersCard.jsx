@@ -37,6 +37,7 @@ export const CampersCard = ({ camp }) => {
   const dispatch = useDispatch();
   const { _id, name, price, rating, location, adults, children } = camp;
   const { engine, transmission, description, details, gallery, reviews } = camp;
+
   const favorites = useSelector(selectFavoritesCampers).find((el) => el._id === _id);
 
   useEffect(() => {
