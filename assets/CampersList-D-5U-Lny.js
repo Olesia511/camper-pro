@@ -1,4 +1,4 @@
-var O_=Object.defineProperty;var C_=(t,n,e)=>n in t?O_(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var ye=(t,n,e)=>(C_(t,typeof n!="symbol"?n+"":n,e),e);import{g as P_,r as W,c as ka,t as k_,_ as xl,d as Nr,R as _l,u as De,a as Sa,j as te,e as Vr,f as oe,h as S_,i as M_,b as Pr,o as D_,B as Lu,k as E_,l as R_,m as N_,n as Wf}from"./index-B6mV-R_v.js";const He="/camper-pro/assets/sprite-COyFGobu.svg",I_=t=>t.campers.items,Pb=t=>{var n;return(n=t.campers)==null?void 0:n.vehicleCard};var _n={},kb={},Sb={exports:{}};/*!
+var O_=Object.defineProperty;var C_=(t,n,e)=>n in t?O_(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var ye=(t,n,e)=>(C_(t,typeof n!="symbol"?n+"":n,e),e);import{g as P_,r as W,c as ka,t as k_,_ as xl,d as Nr,R as _l,u as De,a as Sa,j as te,e as Vr,f as oe,h as S_,i as M_,b as Pr,o as D_,B as Lu,k as E_,l as R_,m as N_,n as Wf}from"./index-yGGtSyy7.js";const He="/camper-pro/assets/sprite-COyFGobu.svg",I_=t=>t.campers.items,Pb=t=>{var n;return(n=t.campers)==null?void 0:n.vehicleCard};var _n={},kb={},Sb={exports:{}};/*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
@@ -724,4 +724,4 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   &.disabl {
     display: none;
   }
-`;const yE=({favorites:t,catalog:n})=>{const e=Sa(),r=Pr(pE),o=Pr(gE);Pr(bE);const i=Pr(Ty),a=Pr(I_),l=r.length>0?a.filter(g=>r==null?void 0:r.includes(g._id)):a,f=t?i:n?l:[];return r.length-o>4,W.useEffect(()=>{o<r&&e(Wf())},[o]),W.useEffect(()=>{n&&e(Wf())},[e]),te.jsx("ul",{style:{maxWidth:680},children:f.length>0&&f.map((g,m)=>te.jsx(fE,{camp:g},g._id))})};export{yE as C,Q5 as F,He as a,Cu as b,dl as f,_n as r,I_ as s};
+`;const yE=({favorites:t,catalog:n})=>{const e=Sa(),r=Pr(pE),o=Pr(gE);Pr(bE);const i=Pr(Ty),a=Pr(I_),l=r.length>0?a.filter(g=>r==null?void 0:r.includes(g._id)):a,f=t?i:n?l:[];return r.length-o>4,W.useEffect(()=>{o<r&&e(Wf())},[o]),W.useEffect(()=>{n&&e(Wf())},[e]),te.jsx("ul",{style:{maxWidth:680},children:f.length>0&&f.map((g,m)=>te.jsx(fE,{camp:g},g._id))})};export{yE as C,Q5 as F,He as a,Cu as b,Ty as c,dl as f,_n as r,I_ as s};
