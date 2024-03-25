@@ -1,13 +1,13 @@
-import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as L,a as m,f as F,F as R,b as B,C as W}from"./CampersList-CNhN9sMU.js";const z=n(j.Card)`
+import{u as i,j as t,r as d,a as B,b as W,s as f}from"./index-Cw81CvG3.js";import{r as C,s as z,a as g,f as E,F as w,b as T,C as V}from"./CampersList-BTjx5KFu.js";const N=i(C.Card)`
   width: 360px;
   margin-right: 64px;
-`,E=n.label`
+`,O=i.label`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   color: ${e=>e.theme.color.greyPlaceholder};
   margin-bottom: 8px;
-`,T=n.div`
+`,P=i.div`
   display: flex;
   align-items: center;
 
@@ -21,7 +21,7 @@ import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as 
   line-height: 1.25;
   color: ${e=>e.theme.color.black};
   margin-bottom: 32px;
-`,V=n(j.Input)`
+`,q=i(C.Input)`
   position: relative;
 
   border: none;
@@ -41,45 +41,45 @@ import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as 
   &::placeholder {
     color: ${e=>e.theme.color.greyPlaceholder};
   }
-`,N=n.svg`
+`,K=i.svg`
   width: 18px;
   height: 20px;
   stroke: ${e=>e.theme.color.black};
   fill: none;
   margin-right: 8px;
-`,O=n.svg`
+`,A=i.svg`
   width: 40px;
   height: 28px;
   stroke: ${e=>e.theme.color.black};
   margin-bottom: 8px;
-`,k=n.div`
+`,y=i.div`
   height: 48px;
   border-bottom: 1px solid ${e=>e.theme.color.blackThird};
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
   margin-bottom: 24px;
-`,P=n.p`
+`,D=i.p`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   color: ${e=>e.theme.color.grey};
 
   margin-bottom: 14px;
-`,q=n.ul`
+`,G=i.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   height: 95px;
   margin-bottom: 64px;
-`,K=n.label`
+`,_=i.label`
   width: 80px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
   text-align: center;
-`,A=n.li`
+`,U=i.li`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -98,7 +98,7 @@ import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as 
     border-color: ${e=>e.theme.color.red};
     transform: scale(1.05);
   }
-`,G=n.input`
+`,H=i.input`
   position: absolute;
   height: 100%;
   width: 100%;
@@ -107,14 +107,14 @@ import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as 
   z-index: 2;
   opacity: 0;
   border: 1px solid ${e=>e.theme.color.blackSecond};
-`,D=n.div`
+`,J=i.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
-`,U=n.svg`
+`,M=i.svg`
   width: 32px;
   height: 32px;
   margin-bottom: 8px;
@@ -126,7 +126,7 @@ import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as 
     stroke-width: 1.8;
     fill: none;
   }
-`,H=n.li`
+`,Q=i.li`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -147,7 +147,7 @@ import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as 
     border-color: ${e=>e.theme.color.red};
     transform: scale(1.05);
   }
-`,J=n.input`
+`,X=i.input`
   position: absolute;
   height: 100%;
   width: 100%;
@@ -156,23 +156,23 @@ import{u as n,j as t,r as p,a as I}from"./index-DMaGFBGH.js";import{r as j,s as 
   z-index: 2;
   opacity: 0;
   border: 1px solid ${e=>e.theme.color.blackSecond};
-`,M=n.div`
+`,Y=i.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
-`,Q=n.ul`
+`,Z=i.ul`
   display: flex;
   flex-wrap: wrap;
   row-gap: 10px;
   flex-direction: row;
   margin-bottom: 32px;
-`,X=n.label`
+`,ee=i.label`
   width: 90px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
   text-align: center;
-`,Y=()=>{function e(){const[d,w]=p.useState(""),[x,y]=p.useState([!0,!1,!1]),[g,C]=p.useState([!1,!1,!1,!1,!1]),f=I(L),a=[{icon:"icon-camper-1",name:"panel truck",class:""},{icon:"icon-camper-2",name:"fully integrated",class:"fully-integrated"},{icon:"icon-camper-3",name:"alcove",class:""}],h=[{icon:"icon-wind",name:"AC",class:"",id:"airConditioner"},{icon:"icon-line-pd",name:"Automatic",class:"stroke",id:"transmission"},{icon:"icon-gastronomy",name:"Kitchen",class:"stroke",id:"kitchen"},{icon:"icon-tv",name:"TV",class:"stroke",id:"TV"},{icon:"icon-shower",name:"Shower/WC",class:"stroke",id:"shower"}],u=(i,o)=>{o?C(l=>{const r=[...l];return r[i]=!r[i],r}):y(l=>l.map((s,c)=>c===i))},$=i=>{const o={};return Object.entries(i).forEach(([l,r])=>{typeof r=="object"&&r!==null?Object.entries(r).forEach(([s,c])=>{o[s]=c}):o[l]=r}),o},b=i=>{i.preventDefault();let o=f;d!==""&&(o=f.filter(s=>s.location.toLowerCase().includes(d.toLocaleLowerCase())));const l=x.findIndex(s=>s);if(l!==-1){const s=a[l].name.toLocaleLowerCase();o=o.filter(c=>{if(B(c.form).toLocaleLowerCase()===s)return c})}const r=g.map((s,c)=>s?h[c].id:null).filter(Boolean);if(r.length>0)o=o.filter(s=>{const c=$(s);return r.every(S=>c.hasOwnProperty(S))});else return o;console.log("Filtered by checkboxes:",o)};return t.jsx(t.Fragment,{children:t.jsx(z,{children:t.jsxs("form",{onSubmit:i=>b(i),children:[t.jsx(E,{children:"Location"}),t.jsxs(T,{children:[t.jsx(N,{children:t.jsx("use",{href:`${m}#icon-location`})}),t.jsx(V,{placeholder:"City",type:"text",onChange:i=>w(i.target.value),value:d})]}),t.jsx(P,{children:"Filters"}),t.jsx(k,{children:"Vehicle equipment"}),t.jsx(Q,{children:g.map((i,o)=>t.jsxs(H,{className:i?"checked":"",children:[t.jsx(J,{id:h[o].id,type:"checkbox",checked:i,onChange:()=>u(o,!0)}),t.jsxs(M,{children:[t.jsx(U,{className:h[o].class,children:t.jsx("use",{href:`${m}#${h[o].icon}`})}),t.jsx(X,{children:h[o].name})]})]},o))}),t.jsx(k,{children:"Vehicle type"}),t.jsxs(q,{children:[x.map((i,o)=>t.jsxs(A,{className:i?`${a[o].class} checked`:`${a[o].class}`,children:[t.jsx(G,{id:a[o].name,type:"radio",name:"radio",checked:i,onChange:()=>u(o,!1)}),t.jsxs(D,{children:[t.jsx(O,{children:t.jsx("use",{href:`${m}#${a[o].icon}`})}),t.jsx(K,{htmlFor:a[o].name,children:F(a[o].name)})]})]},o)),t.jsx("div",{})]}),t.jsx(R,{type:"submit",onClick:b,children:"Send"})]})})})}return t.jsx(t.Fragment,{children:e()})};function ee(){return t.jsxs("div",{className:"flex-style",children:[t.jsx(Y,{}),t.jsx(W,{catalog:"catalog"})]})}export{ee as default};
+`,te=()=>{function e(){const[p,$]=d.useState(""),[u,v]=d.useState([!0,!1,!1]),[b,S]=d.useState([!1,!1,!1,!1,!1]),m=B(),j=W(z),a=[{icon:"icon-camper-1",name:"panel truck",class:""},{icon:"icon-camper-2",name:"fully integrated",class:"fully-integrated"},{icon:"icon-camper-3",name:"alcove",class:""}],h=[{icon:"icon-wind",name:"AC",class:"",id:"airConditioner"},{icon:"icon-line-pd",name:"Automatic",class:"stroke",id:"transmission"},{icon:"icon-gastronomy",name:"Kitchen",class:"stroke",id:"kitchen"},{icon:"icon-tv",name:"TV",class:"stroke",id:"TV"},{icon:"icon-shower",name:"Shower/WC",class:"stroke",id:"shower"}];d.useEffect(()=>{x(0,!1)},[]);const I=()=>{m(f([]))},x=(n,o)=>{o?S(l=>{const c=[...l];return c[n]=!c[n],c}):v(l=>l.map((s,r)=>r===n))},L=n=>{const o={};return Object.entries(n).forEach(([l,c])=>{typeof c=="object"&&c!==null?Object.entries(c).forEach(([s,r])=>{o[s]=r}):o[l]=c}),o},F=n=>{n.preventDefault();let o=j;p!==""&&(o=j.filter(s=>s.location.toLowerCase().includes(p.toLocaleLowerCase())));const l=u.findIndex(s=>s);if(l!==-1){const s=a[l].name.toLocaleLowerCase();o=o.filter(r=>{if(T(r.form).toLocaleLowerCase()===s)return r})}const c=b.map((s,r)=>s?h[r].id:null).filter(Boolean);if(c.length>0){o=o.filter(r=>{const k=L(r);return c.every(R=>k.hasOwnProperty(R))});const s=o.map(r=>r._id);m(f(s))}else{const s=o.map(r=>r._id);m(f(s))}};return t.jsx(t.Fragment,{children:t.jsxs(N,{children:[t.jsxs("form",{style:{marginBottom:"24px"},onSubmit:n=>F(n),children:[t.jsx(O,{children:"Location"}),t.jsxs(P,{children:[t.jsx(K,{children:t.jsx("use",{href:`${g}#icon-location`})}),t.jsx(q,{placeholder:"City",type:"text",onChange:n=>$(n.target.value),value:p})]}),t.jsx(D,{children:"Filters"}),t.jsx(y,{children:"Vehicle equipment"}),t.jsx(Z,{children:b.map((n,o)=>t.jsxs(Q,{className:n?"checked":"",children:[t.jsx(X,{id:h[o].id,type:"checkbox",checked:n,onChange:()=>x(o,!0)}),t.jsxs(Y,{children:[t.jsx(M,{className:h[o].class,children:t.jsx("use",{href:`${g}#${h[o].icon}`})}),t.jsx(ee,{children:h[o].name})]})]},o))}),t.jsx(y,{children:"Vehicle type"}),t.jsxs(G,{children:[u.map((n,o)=>t.jsxs(U,{className:n?`${a[o].class} checked`:`${a[o].class}`,children:[t.jsx(H,{id:a[o].name,type:"radio",name:"radio",checked:n,onChange:()=>x(o,!1)}),t.jsxs(J,{children:[t.jsx(A,{children:t.jsx("use",{href:`${g}#${a[o].icon}`})}),t.jsx(_,{htmlFor:a[o].name,children:E(a[o].name)})]})]},o)),t.jsx("div",{})]}),t.jsx(w,{type:"submit",children:"Send"})]}),t.jsx(w,{type:"submit",onClick:I,children:"Reset"})]})})}return t.jsx(t.Fragment,{children:e()})};function se(){return t.jsxs("div",{className:"flex-style",children:[t.jsx(te,{}),t.jsx(V,{catalog:"catalog"})]})}export{se as default};
