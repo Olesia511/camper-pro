@@ -4,9 +4,12 @@
 Це веб-сайт для прокату кемперів. Користувачі можуть фільтрувати кемпери за розташуванням, обладнанням автомобіля та типом транспортного засобу. 
 Вони також можуть вибрати дату бронювання та додати або видалити кемпери зі свого списку улюблених. Веб-сайт складається з наступних сторінок:
 
-## Home: / - Explore Your Adventure: Book Your Trekker Van Rental Today!
-## Catalog: /catalog - Discover Your Perfect Camper: Browse Available Rentals
-## Favorites: /favorites - Your Favorites: View and Manage Your Preferred Campers
+### Home:     
+       / - Explore Your Adventure: Book Your Trekker Van Rental Today!
+### Catalog:  
+       /catalog - Discover Your Perfect Camper: Browse Available Rentals
+### Favorites: 
+       /favorites - Your Favorites: View and Manage Your Preferred Campers
 
 ## Використані технології
 
