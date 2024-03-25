@@ -175,7 +175,7 @@ export const CampersCard = ({ camp }) => {
       </CardWrapper>
       {isModalOpen && (
         <ModalWindow isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <CampersCardFullData id={_id} onClose={() => setIsModalOpen(false)} />
+          <CampersCardFullData campId={_id} onClose={() => setIsModalOpen(false)} />
         </ModalWindow>
       )}
     </>

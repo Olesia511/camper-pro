@@ -1,4 +1,5 @@
-import image from "../../../public/back.webp";
+// import image from "../../../public/back.webp";
+import image from "/back.webp";
 import { styled } from "styled-components";
 
 export const WelcomeSection = styled.section`

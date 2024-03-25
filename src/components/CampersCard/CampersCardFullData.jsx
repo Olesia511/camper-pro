@@ -142,11 +142,11 @@ export function SimpleRegistrationForm() {
   );
 }
 
-export const CampersCardFullData = (id) => {
+export const CampersCardFullData = ({ campId, onClose }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCamperById(id));
+    dispatch(fetchCamperById(campId));
   }, []);
 
   const card = useSelector(selectVehicleCard);
