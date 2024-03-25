@@ -1,6 +1,6 @@
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/CatalogPage-BpOS8qkp.js","assets/CampersList-DJgykJX4.js","assets/CampersList-BNL2uPDj.css","assets/FavoritePage--fAiTRqt.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/CatalogPage-B98jm4qv.js","assets/CampersList-ByKIgIjT.js","assets/CampersList-BNL2uPDj.css","assets/FavoritePage-B0vXCwch.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
@@ -169,7 +169,7 @@ img {
   &:hover:after {
     border-color: ${e=>e.theme.color.red};
   }
-`,wS=()=>M.jsx(yS,{children:M.jsx(vS,{children:M.jsxs(gS,{children:[M.jsx(As,{exact:"true",to:"/",children:"Home"}),M.jsx(As,{to:"/catalog",children:"Catalog"}),M.jsx(As,{to:"/favorites",children:"Favorites"})]})})}),SS=()=>M.jsxs(M.Fragment,{children:[M.jsx(wS,{}),M.jsx("main",{style:{width:"100%",height:"100%",marginLeft:"auto",marginRight:"auto",marginTop:"100px",padding:"100px 64px"},children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"LOADING......."}),children:M.jsx(p1,{})})}),M.jsx(mS,{}),M.jsx(rS,{})]}),ES=P.lazy(()=>cc(()=>import("./HomePage-7oTjnKhF.js"),__vite__mapDeps([]))),_S=P.lazy(()=>cc(()=>import("./CatalogPage-BpOS8qkp.js"),__vite__mapDeps([0,1,2]))),CS=P.lazy(()=>cc(()=>import("./FavoritePage--fAiTRqt.js"),__vite__mapDeps([3,1,2]))),kS=()=>M.jsx(M.Fragment,{children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"Loading..."}),children:M.jsxs(m1,{children:[M.jsxs(bn,{path:"/",element:M.jsx(SS,{}),children:[M.jsx(bn,{index:!0,element:M.jsx(ES,{})}),M.jsx(bn,{path:"/catalog",element:M.jsx(_S,{})}),M.jsx(bn,{path:"/favorites",element:M.jsx(CS,{})})]}),M.jsx(bn,{path:"*",element:M.jsx(d1,{to:"/"})})]})})});var ry={exports:{}},oy={};/**
+`,wS=()=>M.jsx(yS,{children:M.jsx(vS,{children:M.jsxs(gS,{children:[M.jsx(As,{exact:"true",to:"/",children:"Home"}),M.jsx(As,{to:"/catalog",children:"Catalog"}),M.jsx(As,{to:"/favorites",children:"Favorites"})]})})}),SS=()=>M.jsxs(M.Fragment,{children:[M.jsx(wS,{}),M.jsx("main",{style:{width:"100%",height:"100%",marginLeft:"auto",marginRight:"auto",marginTop:"100px",padding:"100px 64px"},children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"LOADING......."}),children:M.jsx(p1,{})})}),M.jsx(mS,{}),M.jsx(rS,{})]}),ES=P.lazy(()=>cc(()=>import("./HomePage-D45daocK.js"),__vite__mapDeps([]))),_S=P.lazy(()=>cc(()=>import("./CatalogPage-B98jm4qv.js"),__vite__mapDeps([0,1,2]))),CS=P.lazy(()=>cc(()=>import("./FavoritePage-B0vXCwch.js"),__vite__mapDeps([3,1,2]))),kS=()=>M.jsx(M.Fragment,{children:M.jsx(P.Suspense,{fallback:M.jsx("div",{children:"Loading..."}),children:M.jsxs(m1,{children:[M.jsxs(bn,{path:"/",element:M.jsx(SS,{}),children:[M.jsx(bn,{index:!0,element:M.jsx(ES,{})}),M.jsx(bn,{path:"/catalog",element:M.jsx(_S,{})}),M.jsx(bn,{path:"/favorites",element:M.jsx(CS,{})})]}),M.jsx(bn,{path:"*",element:M.jsx(d1,{to:"/"})})]})})});var ry={exports:{}},oy={};/**
  * @license React
  * use-sync-external-store-with-selector.production.min.js
  *

@@ -1,4 +1,4 @@
-import{u as e,j as t}from"./index-BqfLq5EN.js";const o="/camper-pro/assets/back-C6Z5sdsg.webp",a=e.section`
+import{u as e,j as t}from"./index-CuLc7VSY.js";const o="/camper-pro/assets/back-C6Z5sdsg.webp",a=e.section`
   height: 100vh;
   width: 100vw;
   background-image: url(${o});
