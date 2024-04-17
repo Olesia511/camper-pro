@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import sprite from "assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { selectVehicleCard } from "../../redux/campers/selectors";
+import { selectCampers, selectVehicleCard } from "../../redux/campers/selectors";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -109,18 +109,25 @@ import { SimpleRegistrationForm } from "../Campers/SimpleRegistrationForm/Simple
 // }
 
 export const CampersCardFullData = ({ campId, onClose }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const cards = useSelector(selectCampers);
+  const card = cards.find((el) => {
+    return el._id === campId;
+  });
 
-  useEffect(() => {
-    dispatch(fetchCamperById(campId));
-  }, []);
+  // console.log(`campId`, campId);
+  // console.log(`cardscards`, cards);
+  // console.log(`card1`, card1);
 
-  const card = useSelector(selectVehicleCard);
+  // useEffect(() => {
+  //   dispatch(fetchCamperById(campId));
+  // }, []);
+
+  // const card = useSelector(selectVehicleCard);
   const [isActiveFeaturesBtn, setiSActiveFeaturesBtn] = useState(true);
   const [isActiveReviewsBtn, setiSActiveReviewsBtn] = useState(false);
 
-  const { name, price, rating, location, adults, children, engine, transmission } = card;
-  const { description, details, gallery, reviews } = card;
+  const { name, price, rating, location, description, reviews } = card;
 
   return (
     <CampersCardFullDataWrapper>
@@ -174,7 +181,7 @@ export const CampersCardFullData = ({ campId, onClose }) => {
         <VehicleEquipmentWrapper>
           {isActiveFeaturesBtn && (
             <>
-              <EquipmentsList card={card} />
+              <EquipmentsList card={card} classEquipment={"full-data"} />
               <VehicleTitleWrapper>Vehicle details</VehicleTitleWrapper>
               <VehicleDetailsList card={card} />
             </>

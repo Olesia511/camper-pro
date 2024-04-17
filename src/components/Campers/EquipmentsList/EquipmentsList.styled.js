@@ -7,27 +7,34 @@ export const EquipmentDataList = styled.ul`
   margin-bottom: 24px;
   align-content: flex-start;
 
-  &.fullData {
+  &.full-data {
     margin-bottom: 44px;
     height: 200px;
 
     overflow-y: scroll;
     overflow-x: hidden;
+  }
 
-    &::-webkit-scrollbar {
-      width: 40px;
-    }
+  &.card-scroll {
+    height: 96px;
 
-    &::-webkit-scrollbar-track {
-      margin: 8px 0;
-    }
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
-    &::-webkit-scrollbar-thumb {
-      border-radius: 36px;
-      border: 16px solid transparent;
-      background-clip: content-box;
-      background-color: #d9d9d9;
-    }
+  &::-webkit-scrollbar {
+    width: 40px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 8px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 36px;
+    border: 16px solid transparent;
+    background-clip: content-box;
+    background-color: #d9d9d9;
   }
 `;
 
@@ -49,7 +56,8 @@ export const EquipmentSvg = styled.svg`
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  stroke-width: 1.5px;
+
   stroke: ${(props) => props.stroke};
   fill: ${(props) => props.fill};
+  stroke-width: 2px;
 `;

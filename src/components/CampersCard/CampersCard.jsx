@@ -30,13 +30,14 @@ import { addFavorites } from "../../redux/favorites/operations";
 import { selectFavoritesCampers } from "../../redux/favorites/selectors";
 import { removeFavorites } from "../../redux/favorites/slice";
 import { selectCampers } from "../../redux/campers/selectors";
+import { EquipmentsList } from "../Campers/EquipmentsList/EquipmentsList";
 
 export const CampersCard = ({ camp }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const campStor = useSelector(selectCampers);
+  // const campStor = useSelector(selectCampers);
   const {
     _id,
     name,
@@ -51,15 +52,15 @@ export const CampersCard = ({ camp }) => {
     details,
     gallery,
     reviews,
-  } = camp || campStor;
+  } = camp;
 
   const favorites = useSelector(selectFavoritesCampers).find((el) => el._id === _id);
 
-  useEffect(() => {
-    if (isModalOpen) {
-      dispatch(fetchCamperById(_id));
-    }
-  }, [isModalOpen]);
+  // useEffect(() => {
+  //   if (isModalOpen) {
+  //     // dispatch(fetchCamperById(_id));
+  //   }
+  // }, [isModalOpen]);
 
   const handleFavorites = () => (favorites ? dispatch(removeFavorites(_id)) : dispatch(addFavorites(_id)));
 
@@ -104,69 +105,12 @@ export const CampersCard = ({ camp }) => {
           </ReviewsWrapper>
 
           <Description>{sentenceSlice(description)}</Description>
-          {/* 
-          <EquipmentDataWrapper>
-            {adults && (
-              <EquipmentWrapper>
-                <EquipmentSvgFill>
-                  <use href={`${sprite}#icon-users`} />
-                </EquipmentSvgFill>
-                {adults} adults
-                {children > 0 && `, ${children} children`}
-              </EquipmentWrapper>
-            )}
-
-            {transmission && (
-              <EquipmentWrapper>
-                <EquipmentSvgStroke>
-                  <use href={`${sprite}#icon-line-pd`} />
-                </EquipmentSvgStroke>
-                {firstLetterUppercase(transmission)}
-              </EquipmentWrapper>
-            )}
-
-            {engine && (
-              <EquipmentWrapper>
-                <EquipmentSvgFill>
-                  <use href={`${sprite}#icon-gasoline`} />
-                </EquipmentSvgFill>
-                {firstLetterUppercase(engine)}
-              </EquipmentWrapper>
-            )}
-
-            {details.kitchen >= 1 && (
-              <EquipmentWrapper>
-                <EquipmentSvgStroke>
-                  <use href={`${sprite}#icon-gastronomy`} />
-                </EquipmentSvgStroke>
-                Kitchen
-              </EquipmentWrapper>
-            )}
-
-            {details.beds >= 1 && (
-              <EquipmentWrapper>
-                <EquipmentSvgStroke>
-                  <use href={`${sprite}#icon-bed`} />
-                </EquipmentSvgStroke>
-                {details.beds > 1 ? `${details.beds} Beds` : `${details.beds} Bed`}
-              </EquipmentWrapper>
-            )}
-
-            {details.airConditioner >= 1 && (
-              <EquipmentWrapper>
-                <EquipmentSvgFill>
-                  <use href={`${sprite}#icon-wind`} />
-                </EquipmentSvgFill>
-                AC
-              </EquipmentWrapper>
-            )}
-          </EquipmentDataWrapper> */}
+          <EquipmentsList card={camp} classEquipment={"card-scroll"} />
 
           <CamperBtn
             type="button"
             onClick={() => {
               setIsModalOpen(true);
-              dispatch(fetchCamperById(_id));
             }}
           >
             Show more

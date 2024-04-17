@@ -4,11 +4,11 @@ import { firstLetterUppercase } from "../../../helpers/formatedText";
 import { iconsEquipmentArray } from "../../../helpers/iconsEquipmentArray";
 import { EquipmentDataItem, EquipmentDataList, EquipmentSvg } from "./EquipmentsList.styled";
 
-export const EquipmentsList = ({ card }) => {
+export const EquipmentsList = ({ card, classEquipment }) => {
   const svgIcons = iconsEquipmentArray(card);
 
   return (
-    <EquipmentDataList className="fullData">
+    <EquipmentDataList className={classEquipment}>
       {svgIcons.map(
         (el, i) =>
           el.condition && (
