@@ -39,6 +39,7 @@ export const CampersList = ({ favorites, catalog }) => {
     dispatch(fetchCampers());
   }, [dispatch]);
 
+  console.log(`catalogCampers`, catalogCampers);
   return (
     <ul style={{ maxWidth: 680 }}>
       {campersToRender?.length > 0 &&

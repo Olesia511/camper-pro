@@ -134,51 +134,6 @@ export const Description = styled.p`
   }
 `;
 
-export const EquipmentDataWrapper = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
-  align-content: flex-start;
-
-  &.fullData {
-    margin-bottom: 44px;
-    height: 200px;
-
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-    &::-webkit-scrollbar {
-      width: 40px;
-    }
-
-    &::-webkit-scrollbar-track {
-      margin: 8px 0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 36px;
-      border: 16px solid transparent;
-      background-clip: content-box;
-      background-color: #d9d9d9;
-    }
-  }
-`;
-
-export const EquipmentWrapper = styled.li`
-  display: flex;
-  flex-wrap: nowrap;
-  text-align: center;
-  height: 44px;
-  padding: 12px 18px;
-  border-radius: 100px;
-  white-space: nowrap;
-  background: ${(p) => p.theme.color.white};
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-`;
-
 // ********   Styled SVG    ********
 
 export const HeartSvg = styled.svg`
@@ -221,21 +176,21 @@ export const LocationSvg = styled.svg`
   margin-right: 4px;
 `;
 
-export const EquipmentSvgFill = styled.svg`
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  fill: ${(p) => p.theme.color.black};
-  stroke: none;
-`;
+// export const EquipmentSvgFill = styled.svg`
+//   width: 20px;
+//   height: 20px;
+//   margin-right: 8px;
+//   fill: ${(p) => p.theme.color.black};
+//   stroke: none;
+// `;
 
-export const EquipmentSvgStroke = styled.svg`
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  stroke: ${(p) => p.theme.color.black};
-  fill: none;
-`;
+// export const EquipmentSvgStroke = styled.svg`
+//   width: 20px;
+//   height: 20px;
+//   margin-right: 8px;
+//   stroke: ${(p) => p.theme.color.black};
+//   fill: ${(props) => props.fill};
+// `;
 
 // *****   Styled card with full information about campers  *****
 
@@ -244,7 +199,7 @@ export const CampersCardFullDataWrapper = styled.div`
   height: 640px;
 `;
 
-export const ImagesFullDataWrapper = styled.div`
+export const ImagesFullDataWrapper = styled.ul`
   display: flex;
   gap: 16px;
   justify-content: space-between;
@@ -291,10 +246,10 @@ export const VehicleEquipmentWrapper = styled.div`
   height: 532px;
   margin-right: 24px;
 
-  overflow-y: scroll;
-  overflow-x: hidden;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 
-  &::-webkit-scrollbar {
+  /* &::-webkit-scrollbar {
     width: 40px;
   }
 
@@ -307,7 +262,7 @@ export const VehicleEquipmentWrapper = styled.div`
     border: 16px solid transparent;
     background-clip: content-box;
     background-color: #d9d9d9;
-  }
+  } */
 `;
 
 export const VehicleTitleWrapper = styled.div`
@@ -319,7 +274,7 @@ export const VehicleTitleWrapper = styled.div`
   margin-bottom: 24px;
 `;
 
-export const VehicleDetails = styled.li`
+export const VehicleDetailsItem = styled.li`
   display: flex;
   justify-content: space-between;
 
@@ -334,42 +289,6 @@ export const VehicleDetails = styled.li`
   }
 `;
 
-export const VehicleReviewsWrapper = styled.li`
-  &:not(:last-child) {
-    margin-bottom: 24px;
-  }
-`;
-export const VehicleReviewsDataWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-`;
-
-export const VehicleReviewsComment = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: ${(p) => p.theme.color.grey};
-`;
-export const VehicleReviewsCircle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 60px;
-  width: 60px;
-  height: 60px;
-  background: ${(p) => p.theme.color.white};
-  color: ${(p) => p.theme.color.red};
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.25;
-  margin-right: 16px;
-`;
-export const VehicleReviewsName = styled.p`
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.33;
-`;
 export const VehicleReviewsRating = styled.div`
   width: 96px;
   height: 16px;
@@ -381,100 +300,4 @@ export const VehicleBookFormWrapper = styled.div`
   padding: 24px;
   width: 448px;
   height: 532px;
-`;
-
-// *******************   formBook styled   *************
-
-export const FormTitle = styled(Typography)`
-  margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.2;
-  color: ${(p) => p.theme.color.black};
-`;
-
-export const FormText = styled(Typography)`
-  margin-bottom: 24px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: ${(p) => p.theme.color.grey};
-`;
-
-export const FormInput = styled(Input)`
-  position: relative;
-
-  border-radius: 10px;
-  border: none;
-  padding: 18px;
-  width: 400px;
-  height: 56px;
-  background: ${(p) => p.theme.color.whiteSecond};
-
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
-  color: ${(p) => p.theme.color.black};
-  margin-bottom: 14px;
-
-  &:focus,
-  &:active {
-    outline: 2px solid ${(p) => p.theme.color.blackSecond};
-    &:focus::placeholder,
-    &:active::placeholder {
-      position: absolute;
-      top: 0;
-      left: 18px;
-    }
-  }
-
-  &::placeholder {
-    color: ${(p) => p.theme.color.greyPlaceholder};
-  }
-`;
-
-export const FormTextArea = styled(Textarea)`
-  position: relative;
-  border-radius: 10px;
-  border: none;
-  padding: 18px;
-  width: 400px;
-  height: 114px;
-  margin-bottom: 24px;
-  background: ${(p) => p.theme.color.whiteSecond};
-
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
-  color: ${(p) => p.theme.color.black};
-
-  &::placeholder {
-    color: ${(p) => p.theme.color.greyPlaceholder};
-  }
-
-  &:focus,
-  &:active {
-    outline: 2px solid ${(p) => p.theme.color.blackSecond};
-  }
-`;
-
-export const FormBtn = styled(Button)`
-  border-radius: 200px;
-  padding: 16px 60px;
-  width: 160px;
-  height: 56px;
-  background: ${(p) => p.theme.color.red};
-
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  color: ${(p) => p.theme.color.whiteOrigin};
-  transition: border-color 300ms ease-in-out;
-
-  &:hover,
-  :active {
-    background: ${(p) => p.theme.color.redSecond};
-  }
 `;

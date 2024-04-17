@@ -1,0 +1,158 @@
+import { useTheme } from "styled-components";
+
+export const iconsEquipmentArray = (card) => {
+  const theme = useTheme();
+  const color = theme.color.black;
+
+  const { adults, children, engine, transmission, details } = card;
+  const { CD, TV, airConditioner, beds, freezer, gas, hob, kitchen, microwave, radio, shower, toilet, water } = details;
+
+  const svgIcons = [
+    {
+      icon: "icon-users",
+      name: "",
+      nameToUppercase: "",
+      fill: color,
+      stroke: "none",
+      condition: adults >= 1,
+      textCondition: `${adults} adults ${children > 0 ? `, ${children} children` : ""}`,
+    },
+    {
+      icon: "icon-line-pd",
+      name: transmission,
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: transmission !== "",
+      textCondition: "",
+    },
+    {
+      icon: "icon-wind",
+      name: "",
+      nameToUppercase: "AC",
+      fill: color,
+      stroke: "none",
+      condition: airConditioner >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-gasoline",
+      name: engine,
+      nameToUppercase: "",
+      fill: color,
+      stroke: "none",
+      condition: engine !== "",
+      textCondition: "",
+    },
+    {
+      icon: "icon-gastronomy",
+      name: "kitchen",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: kitchen >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-bed",
+      name: "",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: beds >= 1,
+      textCondition: `${beds > 1 ? `${beds} Beds` : `${beds} Bed`}`,
+    },
+    {
+      icon: "icon-cd",
+      name: "",
+      nameToUppercase: "CD",
+      fill: "none",
+      stroke: color,
+      condition: CD >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-tv",
+      name: "",
+      nameToUppercase: "TV",
+      fill: "none",
+      stroke: color,
+      condition: TV >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-radio",
+      name: "radio",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: radio >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-hob",
+      name: "hob",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: hob >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-toilet-paper",
+      name: "toilet",
+      nameToUppercase: "",
+      fill: color,
+      stroke: "none",
+      condition: toilet >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-shower",
+      name: "shower",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: shower >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-freezer",
+      name: "freezer",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: freezer >= 1,
+      textCondition: "",
+    },
+    {
+      icon: "icon-gas",
+      name: "gas",
+      nameToUppercase: "",
+      fill: color,
+      stroke: "none",
+      condition: gas !== "",
+      textCondition: "",
+    },
+    {
+      icon: "icon-water",
+      name: "water",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: water !== "",
+      textCondition: "",
+    },
+    {
+      icon: "icon-microwave",
+      name: "microwave",
+      nameToUppercase: "",
+      fill: "none",
+      stroke: color,
+      condition: microwave >= 1,
+      textCondition: "",
+    },
+  ];
+
+  return svgIcons;
+};

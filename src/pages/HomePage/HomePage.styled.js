@@ -1,4 +1,3 @@
-// import image from "../../../public/back.webp";
 import image from "../../assets/backg-img-3-min.jpg";
 import { styled } from "styled-components";
 

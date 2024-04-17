@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { selectCampers } from "../../redux/campers/selectors";
 
-import { FormBtn } from "../CampersCard/CampersCard.styled";
+// import { FormBtn } from "../CampersCard/CampersCard.styled";
 import {
   CheckedBoxGroupWrapper,
   CheckedBoxInput,
@@ -28,6 +28,7 @@ import {
 import { firstLetterUppercase, splitWordsFunc } from "../../helpers/formatedText";
 
 import { setFilters } from "../../redux/filters/slice";
+import { ButtonSubmit } from "../Campers/Button/Button";
 
 export const CampersFilter = () => {
   function SimpleRegistrationForm() {
@@ -152,11 +153,8 @@ export const CampersFilter = () => {
                 value={location}
               />
             </FormInputWrapper>
-
             <FilterTitle>Filters</FilterTitle>
-
             <EquipmentTitle>Vehicle equipment</EquipmentTitle>
-
             <CheckedBoxGroupWrapper>
               {isCheckedBox.map((isChecked, index) => (
                 <CheckedBoxInputWrapper key={index} className={isChecked ? "checked" : ""}>
@@ -175,9 +173,7 @@ export const CampersFilter = () => {
                 </CheckedBoxInputWrapper>
               ))}
             </CheckedBoxGroupWrapper>
-
             <EquipmentTitle>Vehicle type</EquipmentTitle>
-
             <RadioGroupWrapper>
               {isCheckedRadio.map((isChecked, index) => (
                 <RadioInputWrapper
@@ -205,13 +201,10 @@ export const CampersFilter = () => {
 
               <div></div>
             </RadioGroupWrapper>
-
-            <FormBtn type="submit">Send</FormBtn>
+            <ButtonSubmit children={"Search"} />
           </form>
 
-          <FormBtn type="submit" onClick={resetFilters}>
-            Reset
-          </FormBtn>
+          <ButtonSubmit onClick={resetFilters} children={"Reset"} />
         </FiltersWrapper>
       </>
     );

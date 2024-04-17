@@ -13,17 +13,17 @@ import {
   LocationSvg,
   Reviews,
   Description,
-  EquipmentDataWrapper,
-  EquipmentSvgFill,
-  EquipmentSvgStroke,
-  EquipmentWrapper,
+  // EquipmentDataWrapper,
+  // EquipmentSvgFill,
+  // EquipmentSvgStroke,
+  // EquipmentWrapper,
   CamperBtn,
 } from "./CampersCard.styled";
 import sprite from "assets/sprite.svg";
 import { ModalWindow } from "../Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCamperById } from "../../redux/campers/operations";
-import { firstLetterUppercase, sentenceSlice } from "../../helpers/formatedText";
+import { sentenceSlice } from "../../helpers/formatedText";
 import { CampersCardFullData } from "./CampersCardFullData";
 import { addFavorites } from "../../redux/favorites/operations";
 
@@ -104,7 +104,7 @@ export const CampersCard = ({ camp }) => {
           </ReviewsWrapper>
 
           <Description>{sentenceSlice(description)}</Description>
-
+          {/* 
           <EquipmentDataWrapper>
             {adults && (
               <EquipmentWrapper>
@@ -160,7 +160,7 @@ export const CampersCard = ({ camp }) => {
                 AC
               </EquipmentWrapper>
             )}
-          </EquipmentDataWrapper>
+          </EquipmentDataWrapper> */}
 
           <CamperBtn
             type="button"
