@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Input, Button, Typography, Textarea } from "@material-tailwind/react";
 
 // *****   Styled card with information about campers  ****
 
@@ -14,30 +13,6 @@ export const CardWrapper = styled.li`
 
   &:not(:last-child) {
     margin-bottom: 32px;
-  }
-`;
-
-export const CardImageWrapper = styled.div`
-  border-radius: 10px;
-  overflow: hidden;
-  width: 290px;
-  height: 310px;
-  background-color: ${(p) => p.theme.color.whiteSecond};
-`;
-
-export const CardImage = styled.img`
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1);
-  transition: transform 500ms ease-in-out, object-fit 500ms ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-  &.contain-card {
-    object-fit: contain;
   }
 `;
 
@@ -176,22 +151,6 @@ export const LocationSvg = styled.svg`
   margin-right: 4px;
 `;
 
-// export const EquipmentSvgFill = styled.svg`
-//   width: 20px;
-//   height: 20px;
-//   margin-right: 8px;
-//   fill: ${(p) => p.theme.color.black};
-//   stroke: none;
-// `;
-
-// export const EquipmentSvgStroke = styled.svg`
-//   width: 20px;
-//   height: 20px;
-//   margin-right: 8px;
-//   stroke: ${(p) => p.theme.color.black};
-//   fill: ${(props) => props.fill};
-// `;
-
 // *****   Styled card with full information about campers  *****
 
 export const CampersCardFullDataWrapper = styled.div`
@@ -199,11 +158,12 @@ export const CampersCardFullDataWrapper = styled.div`
   height: 640px;
 `;
 
-export const ImagesFullDataWrapper = styled.ul`
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
-  margin-bottom: 24px;
+export const FixWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  background: ${(p) => p.theme.color.whiteOrigin};
+
+  z-index: 2000;
 `;
 
 export const DetailsBtnWrapper = styled.div`
@@ -245,24 +205,6 @@ export const VehicleEquipmentWrapper = styled.div`
   width: 430px;
   height: 532px;
   margin-right: 24px;
-
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
-
-  /* &::-webkit-scrollbar {
-    width: 40px;
-  }
-
-  &::-webkit-scrollbar-track {
-    margin: 8px 0;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 36px;
-    border: 16px solid transparent;
-    background-clip: content-box;
-    background-color: #d9d9d9;
-  } */
 `;
 
 export const VehicleTitleWrapper = styled.div`
@@ -272,21 +214,6 @@ export const VehicleTitleWrapper = styled.div`
   border-bottom: 1px solid ${(p) => p.theme.color.blackThird};
   height: 48px;
   margin-bottom: 24px;
-`;
-
-export const VehicleDetailsItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.33;
-  text-align: center;
-  color: ${(p) => p.theme.color.black};
-
-  &:not(:last-child) {
-    margin-bottom: 14px;
-  }
 `;
 
 export const VehicleReviewsRating = styled.div`
@@ -300,4 +227,36 @@ export const VehicleBookFormWrapper = styled.div`
   padding: 24px;
   width: 448px;
   height: 532px;
+`;
+
+export const ImagesFullDataWrapper = styled.div`
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-top: 144px;
+`;
+
+export const CardImageWrapper = styled.div`
+  border-radius: 10px;
+  overflow: hidden;
+  width: 290px;
+  height: 310px;
+  background-color: ${(p) => p.theme.color.whiteSecond};
+`;
+
+export const CardImage = styled.img`
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 500ms ease-in-out, object-fit 500ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  &.contain-card {
+    object-fit: contain;
+  }
 `;

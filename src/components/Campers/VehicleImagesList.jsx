@@ -1,4 +1,4 @@
-import { CardImage, CardImageWrapper, ImagesFullDataWrapper } from "./CampersCard.styled";
+import { CardImage, CardImageWrapper, ImagesFullDataWrapper } from "./CampersCard/CampersCard.styled";
 
 export const VehicleImagesList = ({ card }) => {
   const { name, gallery } = card;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Input, Typography, Textarea } from "@material-tailwind/react";
+import { Input, Typography, Textarea, Button } from "@material-tailwind/react";
 
 export const FormTitle = styled(Typography)`
   margin-bottom: 8px;
@@ -93,23 +93,23 @@ export const FormTextArea = styled(Textarea)`
   }
 `;
 
-// export const FormBtn = styled(Button)`
-//   border-radius: 200px;
-//   padding: 16px 60px;
-//   width: 160px;
-//   height: 56px;
-//   background: ${(p) => p.theme.color.red};
+export const FormBtn = styled(Button)`
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 160px;
+  height: 56px;
+  background: ${(p) => p.theme.color.red};
 
-//   font-family: inherit;
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 1.5;
-//   letter-spacing: -0.01em;
-//   color: ${(p) => p.theme.color.whiteOrigin};
-//   transition: border-color 300ms ease-in-out;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: ${(p) => p.theme.color.whiteOrigin};
+  transition: border-color 300ms ease-in-out;
 
-//   &:hover,
-//   :active {
-//     background: ${(p) => p.theme.color.redSecond};
-//   }
-// `;
+  &:hover,
+  :active {
+    background: ${(p) => p.theme.color.redSecond};
+  }
+`;

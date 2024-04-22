@@ -1,5 +1,5 @@
-import { firstLetterUppercase, splitDataFunc, splitWordsFunc } from "../../helpers/formatedText";
-import { VehicleDetailsItem } from "./CampersCard.styled";
+import { firstLetterUppercase, splitDataFunc, splitWordsFunc } from "../../../helpers/formatedText";
+import { VehicleDetailsItem } from "./VehicleDetailsList.styled";
 
 export const VehicleDetailsList = ({ card }) => {
   const { form, length, width, height, tank, consumption } = card;

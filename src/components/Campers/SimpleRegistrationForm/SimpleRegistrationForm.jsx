@@ -8,8 +8,7 @@ import { orderVehicle } from "../../../redux/bookVehicle/slice";
 import { changeDate } from "../../../redux/dateBook/slice";
 import { splitWordsFunc } from "../../../helpers/formatedText";
 import StyledDatepicker from "../../DatePicker/StyledDatePicker";
-import { FormInput, FormText, FormTextArea, FormTitle } from "./SimpleRegistrationForm.styled";
-import { ButtonSubmit } from "../Button/Button";
+import { FormBtn, FormInput, FormText, FormTextArea, FormTitle } from "./SimpleRegistrationForm.styled";
 import { Card } from "@material-tailwind/react";
 import { isEmailValid } from "../../../helpers/isEmailValid";
 
@@ -76,8 +75,10 @@ export function SimpleRegistrationForm() {
             />
           </div>
         </div>
-        <ButtonSubmit onClick={handleSubmit} children={"Send"} />
 
+        <FormBtn type="submit" onClick={handleSubmit}>
+          Send
+        </FormBtn>
         {/* <FormBtn type="submit" onClick={handleSubmit}>
           Send
         </FormBtn> */}

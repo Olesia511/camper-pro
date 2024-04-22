@@ -1,5 +1,28 @@
 import styled from "styled-components";
 
+export const ReviewsAllList = styled.ul`
+  width: 100%;
+  height: 532px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 40px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 8px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 36px;
+    border: 16px solid transparent;
+    background-clip: content-box;
+    background-color: #d9d9d9;
+  }
+`;
+
 export const ReviewsItem = styled.li`
   &:not(:last-child) {
     margin-bottom: 24px;

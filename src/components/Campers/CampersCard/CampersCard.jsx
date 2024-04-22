@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   CamperData,
-  CardImage,
   CardImageWrapper,
   CardWrapper,
   HeartBtn,
@@ -13,54 +12,29 @@ import {
   LocationSvg,
   Reviews,
   Description,
-  // EquipmentDataWrapper,
-  // EquipmentSvgFill,
-  // EquipmentSvgStroke,
-  // EquipmentWrapper,
   CamperBtn,
+  CardImage,
 } from "./CampersCard.styled";
 import sprite from "assets/sprite.svg";
-import { ModalWindow } from "../Modal/Modal";
+import { ModalWindow } from "../../Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCamperById } from "../../redux/campers/operations";
-import { sentenceSlice } from "../../helpers/formatedText";
+import { sentenceSlice } from "../../../helpers/formatedText";
 import { CampersCardFullData } from "./CampersCardFullData";
-import { addFavorites } from "../../redux/favorites/operations";
+import { addFavorites } from "../../../redux/favorites/operations";
 
-import { selectFavoritesCampers } from "../../redux/favorites/selectors";
-import { removeFavorites } from "../../redux/favorites/slice";
-import { selectCampers } from "../../redux/campers/selectors";
-import { EquipmentsList } from "../Campers/EquipmentsList/EquipmentsList";
+import { selectFavoritesCampers } from "../../../redux/favorites/selectors";
+import { removeFavorites } from "../../../redux/favorites/slice";
+import { EquipmentsList } from "../EquipmentsList/EquipmentsList";
 
 export const CampersCard = ({ camp }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  // const campStor = useSelector(selectCampers);
-  const {
-    _id,
-    name,
-    price,
-    rating,
-    location,
-    adults,
-    children,
-    engine,
-    transmission,
-    description,
-    details,
-    gallery,
-    reviews,
-  } = camp;
+
+  const { _id, name, price, rating, location, description, gallery, reviews } = camp;
 
   const favorites = useSelector(selectFavoritesCampers).find((el) => el._id === _id);
-
-  // useEffect(() => {
-  //   if (isModalOpen) {
-  //     // dispatch(fetchCamperById(_id));
-  //   }
-  // }, [isModalOpen]);
 
   const handleFavorites = () => (favorites ? dispatch(removeFavorites(_id)) : dispatch(addFavorites(_id)));
 
@@ -119,7 +93,7 @@ export const CampersCard = ({ camp }) => {
       </CardWrapper>
       {isModalOpen && (
         <ModalWindow isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <CampersCardFullData campId={_id} onClose={() => setIsModalOpen(false)} />
+          <CampersCardFullData campId={_id} />
         </ModalWindow>
       )}
     </>

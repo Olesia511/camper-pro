@@ -6,29 +6,31 @@ import { useDispatch } from "react-redux";
 
 export const ModalWindow = ({ isOpen, onClose, children }) => {
   const dispatch = useDispatch();
-  const onBackDropClick = (evt) => {
+  const body = document.querySelector("body");
+
+  const onCloseModal = (evt) => {
     if (evt.currentTarget === evt.target) {
       dispatch(changeDate(new Date().toISOString()));
       onClose();
     }
+
+    if (evt.keyCode === 27) {
+      dispatch(changeDate(new Date().toISOString()));
+      onClose();
+    }
   };
-  const body = document.querySelector("body");
+
   useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.keyCode === 27) {
-        dispatch(changeDate(new Date().toISOString()));
-        onClose();
-      }
-    };
     if (isOpen) {
-      document.addEventListener("keydown", handleKeyPress);
+      document.addEventListener("keydown", onCloseModal);
       body.classList.add("disable-scroll");
     }
     return () => {
-      document.removeEventListener("keydown", handleKeyPress);
+      document.removeEventListener("keydown", onCloseModal);
       body.classList.remove("disable-scroll");
     };
   }, [isOpen, onClose]);
+
   if (!isOpen) {
     return null;
   }
@@ -36,7 +38,7 @@ export const ModalWindow = ({ isOpen, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <Modal id="modal-win" onClick={onBackDropClick}>
+        <Modal id="modal-win" onClick={onCloseModal}>
           <ModalContent>
             <ModalCloseBtn onClick={onClose}>
               <ModalClosetSvg>

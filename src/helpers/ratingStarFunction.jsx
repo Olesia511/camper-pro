@@ -1,6 +1,6 @@
 import { Rating } from "@material-tailwind/react";
-import { StarSvg } from "../components/CampersCard/CampersCard.styled";
 import sprite from "assets/sprite.svg";
+import { StarSvg } from "../components/Campers/CampersCard/CampersCard.styled";
 
 export const ratingFunc = (num) => {
   function RatedIcon() {

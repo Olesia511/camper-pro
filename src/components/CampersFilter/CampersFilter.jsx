@@ -2,8 +2,6 @@ import sprite from "assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { selectCampers } from "../../redux/campers/selectors";
-
-// import { FormBtn } from "../CampersCard/CampersCard.styled";
 import {
   CheckedBoxGroupWrapper,
   CheckedBoxInput,
@@ -14,6 +12,7 @@ import {
   EquipmentTitle,
   FilterTitle,
   FiltersWrapper,
+  FormBtn,
   FormInput,
   FormInputWrapper,
   LocationLabel,
@@ -26,9 +25,8 @@ import {
   VehicleSvg,
 } from "./CampersFilter.styled";
 import { firstLetterUppercase, splitWordsFunc } from "../../helpers/formatedText";
-
 import { setFilters } from "../../redux/filters/slice";
-import { ButtonSubmit } from "../Campers/Button/Button";
+import { flattenObjectInArray } from "../../helpers/flattenObjectInArray";
 
 export const CampersFilter = () => {
   function SimpleRegistrationForm() {
@@ -39,6 +37,12 @@ export const CampersFilter = () => {
     const dispatch = useDispatch();
 
     const catalogCampers = useSelector(selectCampers);
+
+    const filteredAllCampersId = catalogCampers.map((el) => el._id);
+
+    useEffect(() => {
+      dispatch(setFilters(filteredAllCampersId));
+    }, []);
 
     const svgIconsRadio = [
       { icon: "icon-camper-1", name: "panel truck", class: "" },
@@ -59,8 +63,9 @@ export const CampersFilter = () => {
     }, []);
 
     const resetFilters = () => {
-      dispatch(setFilters([]));
+      dispatch(setFilters(filteredAllCampersId));
     };
+
     const handleCheckboxChange = (index, isCheckbox) => {
       if (isCheckbox) {
         setIsCheckedBox((prevState) => {
@@ -75,65 +80,107 @@ export const CampersFilter = () => {
         });
       }
     };
-    const flattenObject = (obj) => {
-      const flattened = {};
-
-      Object.entries(obj).forEach(([key, value]) => {
-        if (typeof value === "object" && value !== null) {
-          Object.entries(value).forEach(([nestedKey, nestedValue]) => {
-            flattened[nestedKey] = nestedValue;
-          });
-        } else {
-          flattened[key] = value;
-        }
-      });
-      return flattened;
-    };
 
     const handleSubmit = (event) => {
       event.preventDefault();
 
-      let filteredItems = catalogCampers;
-      if (location !== "") {
-        filteredItems = catalogCampers.filter((item) =>
-          item.location.toLowerCase().includes(location.toLocaleLowerCase())
-        );
-      }
+      let filteredCampers = [];
 
-      const selectedRadioIndex = isCheckedRadio.findIndex((isChecked) => {
-        return isChecked;
-      });
+      // ========    FILTERED BY LOCATION      ==================
 
-      if (selectedRadioIndex !== -1) {
-        const selectedRadioId = svgIconsRadio[selectedRadioIndex].name.toLocaleLowerCase();
+      const locationFilter = () => {
+        if (location !== "") {
+          const result = catalogCampers.filter((item) => item.location.toLowerCase().includes(location.toLowerCase()));
 
-        filteredItems = filteredItems.filter((item) => {
-          const radioItem = splitWordsFunc(item.form).toLocaleLowerCase();
-          if (radioItem === selectedRadioId) {
-            return item;
+          filteredCampers.push(result);
+        } else {
+          filteredCampers.push(catalogCampers);
+        }
+      };
+
+      locationFilter();
+
+      // ========    FILTERED BY RADIO BTN   ==================
+
+      const radioBtnFilter = () => {
+        const campers = filteredCampers[0];
+        if (campers.length === 0) {
+          return;
+        }
+
+        let radioCampers = [];
+
+        const selectedRadioIndex = isCheckedRadio.findIndex((isChecked) => {
+          return isChecked;
+        });
+        const selectedRadio = svgIconsRadio[selectedRadioIndex].name.toLowerCase();
+
+        campers.filter((camper) => {
+          const radioItem = splitWordsFunc(camper.form).toLowerCase();
+          if (radioItem === selectedRadio) {
+            radioCampers.push(camper);
           }
         });
-      }
 
-      const selectedCheckboxes = isCheckedBox
-        .map((isChecked, index) => {
-          return isChecked ? svgIconsBox[index].id : null;
-        })
-        .filter(Boolean);
+        filteredCampers = [...radioCampers];
+      };
 
-      if (selectedCheckboxes.length > 0) {
-        filteredItems = filteredItems.filter((item) => {
-          const flattenedItem = flattenObject(item);
-          const allKeysExist = selectedCheckboxes.every((checkbox) => {
-            return flattenedItem.hasOwnProperty(checkbox);
-          });
-          return allKeysExist;
+      radioBtnFilter();
+
+      // ========    FILTERED BY CHECKBOX   ==================
+
+      const checkboxesFilter = () => {
+        const checkboxesCampers = filteredCampers;
+        if (checkboxesCampers.length === 0) {
+          return;
+        }
+
+        const checkedDataArr = [];
+
+        isCheckedBox.filter((el, i) => {
+          if (el === true) {
+            checkedDataArr.push(svgIconsBox[i].id);
+          }
         });
-        const filt1 = filteredItems.map((obj) => obj._id);
-        dispatch(setFilters(filt1));
+
+        if (checkedDataArr.length > 0) {
+          let checkedCampers = [];
+
+          checkboxesCampers.map((camper) => {
+            const obj = flattenObjectInArray(camper);
+
+            let num = 0;
+            checkedDataArr.map((el) => {
+              obj.find((ent) => {
+                const entrie = Object.entries(ent)[0];
+                const key = entrie[0];
+                const val = entrie[1];
+
+                if (key === el && typeof val === "string" && val !== "") {
+                  num += 1;
+                }
+                if (key === el && typeof val === "number" && val > 0) {
+                  num += 1;
+                }
+              });
+            });
+
+            if (num === checkedDataArr.length) {
+              checkedCampers.push(camper);
+            }
+          });
+
+          filteredCampers = [...checkedCampers];
+        }
+      };
+
+      checkboxesFilter();
+      if (filteredCampers.length > 0) {
+        const filtersId = filteredCampers.map((el) => el._id);
+
+        dispatch(setFilters(filtersId));
       } else {
-        const filt2 = filteredItems.map((obj) => obj._id);
-        dispatch(setFilters(filt2));
+        dispatch(setFilters(null));
       }
     };
 
@@ -201,13 +248,14 @@ export const CampersFilter = () => {
 
               <div></div>
             </RadioGroupWrapper>
-            <ButtonSubmit children={"Search"} />
+            <FormBtn type="submit">Search</FormBtn>;
           </form>
-
-          <ButtonSubmit onClick={resetFilters} children={"Reset"} />
+          <FormBtn type="button" onClick={resetFilters}>
+            Reset
+          </FormBtn>
         </FiltersWrapper>
       </>
     );
   }
-  return <>{SimpleRegistrationForm()}</>;
+  return <SimpleRegistrationForm />;
 };

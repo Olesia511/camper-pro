@@ -1,9 +1,16 @@
 import { ratingFunc } from "../../../helpers/ratingStarFunction";
-import { ReviewsCircle, ReviewsDataWrapper, ReviewsItem, ReviewsName, ReviewsComment } from "./ReviewsList.styled";
+import {
+  ReviewsCircle,
+  ReviewsDataWrapper,
+  ReviewsItem,
+  ReviewsName,
+  ReviewsComment,
+  ReviewsAllList,
+} from "./ReviewsList.styled";
 
 export const ReviewsList = ({ reviews }) => {
   return (
-    <ul>
+    <ReviewsAllList>
       {reviews.map(({ reviewer_name, reviewer_rating, comment }, i) => (
         <ReviewsItem key={`${reviewer_name + i}`}>
           <ReviewsDataWrapper>
@@ -17,6 +24,6 @@ export const ReviewsList = ({ reviews }) => {
           <ReviewsComment>{comment}</ReviewsComment>
         </ReviewsItem>
       ))}
-    </ul>
+    </ReviewsAllList>
   );
 };
