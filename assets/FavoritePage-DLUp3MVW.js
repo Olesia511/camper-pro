@@ -1,4 +1,4 @@
-import{u as r,b as a,j as t}from"./index-Xhpv-S_R.js";import{c as s,C as i}from"./CampersList-CWdG6AAi.js";const o=r.div`
+import{u as r,b as a,j as t}from"./index-Dv9l5Dm8.js";import{c as s,C as i}from"./CampersList-CtC2IPJn.js";const o=r.div`
   display: flex;
   gap: 24px;
   border: ${e=>e.theme.border.cardBorder};
