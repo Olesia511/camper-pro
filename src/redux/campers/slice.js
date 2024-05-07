@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCamperById, fetchCampers, fetchRefreshCampers } from "./operations";
+import { fetchCampersPage, fetchRefreshCampers, fetchTotalNumberCampers } from "./operations";
 
 const campersInitialState = {
   items: [],
+  totalNumberCampers: 0,
   isLoading: false,
   error: null,
 };
@@ -22,23 +23,27 @@ const campersSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCampers.pending, handlePending)
-      .addCase(fetchCampers.fulfilled, (state, action) => {
+      .addCase(fetchTotalNumberCampers.pending, handlePending)
+      .addCase(fetchTotalNumberCampers.fulfilled, (state, action) => {
+        state.totalNumberCampers = action.payload;
+      })
+      .addCase(fetchTotalNumberCampers.rejected, handleRejected)
+
+      .addCase(fetchCampersPage.pending, handlePending)
+      .addCase(fetchCampersPage.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
 
-        state.items = action.payload;
-      })
-      .addCase(fetchCampers.rejected, handleRejected)
+        if (state.items.length === 0) state.items = action.payload;
+        if (state.items.length > 0) {
+          const campersIdArr = state.items.map((item) => item._id);
+          const newCampers = action.payload.filter((item) => !campersIdArr.includes(item._id));
 
-      .addCase(fetchCamperById.pending, handlePending)
-      .addCase(fetchCamperById.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-
-        state.vehicleCard = action.payload;
+          state.items.push(...newCampers);
+        }
       })
-      .addCase(fetchCamperById.rejected, handleRejected)
+      .addCase(fetchCampersPage.rejected, handleRejected)
+
       .addCase(fetchRefreshCampers.pending, handlePending)
       .addCase(fetchRefreshCampers.fulfilled, (state, action) => {
         state.items = action.payload;

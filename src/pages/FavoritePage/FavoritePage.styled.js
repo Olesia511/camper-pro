@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   padding: 24px;
   width: 888px;
   height: 358px;
-  background: ${(p) => p.theme.color.blackThird};
   margin-left: auto;
   margin-right: auto;
 

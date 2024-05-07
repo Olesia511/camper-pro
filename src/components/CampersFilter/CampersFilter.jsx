@@ -63,7 +63,10 @@ export const CampersFilter = () => {
     }, []);
 
     const resetFilters = () => {
-      dispatch(setFilters(filteredAllCampersId));
+      dispatch(setFilters([]));
+      setLocation("");
+      setIsCheckedRadio([true, false, false]);
+      setIsCheckedBox([false, false, false, false, false]);
     };
 
     const handleCheckboxChange = (index, isCheckbox) => {
@@ -248,7 +251,7 @@ export const CampersFilter = () => {
 
               <div></div>
             </RadioGroupWrapper>
-            <FormBtn type="submit">Search</FormBtn>;
+            <FormBtn type="submit">Search</FormBtn>
           </form>
           <FormBtn type="button" onClick={resetFilters}>
             Reset

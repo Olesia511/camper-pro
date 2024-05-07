@@ -79,9 +79,6 @@ export function SimpleRegistrationForm() {
         <FormBtn type="submit" onClick={handleSubmit}>
           Send
         </FormBtn>
-        {/* <FormBtn type="submit" onClick={handleSubmit}>
-          Send
-        </FormBtn> */}
       </form>
     </Card>
   );
